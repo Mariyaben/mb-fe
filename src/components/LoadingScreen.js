@@ -4,15 +4,15 @@ import { Code, Cpu, Zap, Brain } from 'lucide-react';
 
 const LoadingScreen = () => {
   const [progress, setProgress] = useState(0);
-  const [currentText, setCurrentText] = useState('Initializing AI Systems...');
+  const [currentText, setCurrentText] = useState('Loading...');
 
   const loadingTexts = [
-    'Initializing AI Systems...',
-    'Loading Neural Networks...',
-    'Connecting to Backend...',
-    'Optimizing Performance...',
-    'Rendering Components...',
-    'Almost Ready...'
+    'Loading...',
+    'Preparing Magic...',
+    'Brewing Awesomeness...',
+    'Assembling Dreams...',
+    'Almost There...',
+    'Ready to Rock!'
   ];
 
   useEffect(() => {
@@ -150,26 +150,6 @@ const LoadingScreen = () => {
         >
           {progress}%
         </motion.p>
-
-        {/* AI Status Indicators */}
-        <div className="mt-8 flex justify-center space-x-4">
-          {['Frontend', 'Backend', 'AI', 'Database'].map((system, index) => (
-            <motion.div
-              key={system}
-              className="flex items-center space-x-2"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.2 }}
-            >
-              <motion.div
-                className="w-2 h-2 bg-green-400 rounded-full"
-                animate={{ scale: [1, 1.5, 1] }}
-                transition={{ duration: 1, repeat: Infinity, delay: index * 0.3 }}
-              />
-              <span className="text-sm text-gray-400">{system}</span>
-            </motion.div>
-          ))}
-        </div>
       </div>
 
       {/* Matrix-like Code Rain Effect */}
