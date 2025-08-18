@@ -21,22 +21,22 @@ const Hero = () => {
   });
   const { isDark } = useTheme();
 
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  // Removed scroll-based motion
+  // const { scrollYProgress } = useScroll();
+  // const y = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   const texts = [
     'AI & Data Science Specialist',
-    'Full-Stack Developer',
-    'Machine Learning Engineer',
-    'Creative Problem Solver',
     'International Exchange Student',
-    'Startup Winner & Innovator',
+    'Aspiring Startup Founder',
+    'Full-Stack Developer',
+    'Machine Learning Engineer'
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTextIndex((prev) => (prev + 1) % texts.length);
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [texts.length]);
@@ -47,33 +47,21 @@ const Hero = () => {
     { icon: Mail, href: 'mailto:mariyaben02@gmail.com', label: 'Email' },
   ];
 
-
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <motion.div
+      {/* Background - Removed to show stars through */}
+      {/* <motion.div
         className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
         style={{ y }}
-      />
+      /> */}
 
-      {/* Animated Background Elements */}
+      {/* Static Background Elements - Removed all motion */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
+        <div
           className="absolute top-20 left-20 w-32 h-32 rounded-full bg-gray-700/20 blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{ duration: 4, repeat: Infinity }}
         />
-        <motion.div
+        <div
           className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-gray-600/20 blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4]
-          }}
-          transition={{ duration: 5, repeat: Infinity }}
         />
       </div>
 
@@ -90,9 +78,9 @@ const Hero = () => {
             className="mb-8 flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 0.1, duration: 0.6 }}
+            transition={{ delay: 0.1, duration: 1.2 }}
           >
-                         <div className={`relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 ${
+            <div className={`relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 ${
                isDark ? 'border-primary-500/30' : 'border-primary-200/50'
              } shadow-2xl`}>
               <motion.img
@@ -100,17 +88,13 @@ const Hero = () => {
                 alt="Mariya"
                 className="w-full h-full object-cover"
                 whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.6 }}
               />
-              {/* Glow effect */}
-              <motion.div
+              {/* Static glow effect - Removed motion */}
+              <div
                 className={`absolute inset-0 rounded-full ${
                   isDark ? 'bg-primary-500/20' : 'bg-primary-100/30'
                 }`}
-                animate={{
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
               />
             </div>
           </motion.div>
@@ -120,7 +104,7 @@ const Hero = () => {
             className="text-5xl lg:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.4, duration: 1.0 }} // Added duration for smoother animation
           >
                          <span className={`bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent ${
                isDark ? 'drop-shadow-glow' : ''
@@ -134,7 +118,7 @@ const Hero = () => {
             className="h-8 mb-8 flex justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.6, duration: 1.0 }} // Added duration for smoother animation
           >
             <span className={`text-xl lg:text-2xl font-medium ${
               isDark ? 'text-gray-300' : 'text-gray-600'
@@ -151,7 +135,7 @@ const Hero = () => {
                 isDark ? 'text-primary-400' : 'text-primary-600'
               }`}
               animate={{ opacity: [1, 0] }}
-              transition={{ duration: 0.5, repeat: Infinity }}
+              transition={{ duration: 1.2, repeat: Infinity }} // Increased from 0.5s to 1.2s
             >
               |
             </motion.span>
@@ -164,7 +148,7 @@ const Hero = () => {
              }`}
              initial={{ opacity: 0, y: 20 }}
              animate={inView ? { opacity: 1, y: 0 } : {}}
-             transition={{ delay: 0.8 }}
+             transition={{ delay: 0.8, duration: 1.2 }} // Increased from default to 1.2s
            >
              As a 9th semester MSc student specializing in AI and Data Science at CUSAT, I blend academic excellence with innovation. 
              Currently an exchange student at ENSSAT, France, I'm passionate about solving real-world challenges through technology. 
@@ -176,7 +160,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 1.0 }}
+            transition={{ delay: 1.0, duration: 1.2 }} // Added duration for smoother animation
           >
             <motion.button
               className={`flex items-center space-x-2 px-8 py-4 rounded-lg font-semibold transition-all duration-300 ${
@@ -186,6 +170,7 @@ const Hero = () => {
               }`}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.6 }} // Added explicit transition duration
             >
               <span>View My Work</span>
               <ArrowRight className="w-5 h-5" />
@@ -199,6 +184,7 @@ const Hero = () => {
               }`}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.6 }} // Added explicit transition duration
             >
               <Download className="w-5 h-5" />
               <span>Download CV</span>
@@ -210,7 +196,7 @@ const Hero = () => {
             className="flex justify-center space-x-6 mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 1.2, duration: 1.2 }} // Added duration for smoother animation
           >
             {socialLinks.map((link, index) => {
               const Icon = link.icon;
@@ -227,7 +213,7 @@ const Hero = () => {
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 1.4 + index * 0.1 }}
+                  transition={{ delay: 1.4 + index * 0.1, duration: 1.0 }} // Added duration for smoother animation
                 >
                   <Icon className="w-6 h-6" />
                 </motion.a>

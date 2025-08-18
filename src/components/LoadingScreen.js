@@ -59,9 +59,10 @@ const LoadingScreen = () => {
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 12 + Math.random() * 6,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              ease: "easeInOut",
+              repeatType: "reverse"
             }}
           />
         ))}
@@ -77,9 +78,10 @@ const LoadingScreen = () => {
             scale: [1, 1.1, 1],
           }}
           transition={{
-            duration: 2,
+            duration: 15,
             repeat: Infinity,
             ease: "easeInOut",
+            repeatType: "reverse"
           }}
         >
           <div className="relative">
@@ -91,10 +93,11 @@ const LoadingScreen = () => {
                   rotate: [0, 360],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 20,
                   repeat: Infinity,
-                  delay: index * 0.5,
-                  ease: "linear",
+                  delay: index * 0.8,
+                  ease: "easeInOut",
+                  repeatType: "reverse"
                 }}
               >
                 <Icon 
@@ -134,8 +137,16 @@ const LoadingScreen = () => {
         {/* Progress Percentage */}
         <motion.p
           className="text-primary-400 font-mono text-lg"
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 1, repeat: Infinity }}
+          animate={{ 
+            opacity: [0.5, 1, 0.5],
+            scale: [0.9, 1.1, 0.9]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            repeatType: "reverse"
+          }}
         >
           {progress}%
         </motion.p>
@@ -176,9 +187,10 @@ const LoadingScreen = () => {
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: 2 + Math.random() * 3,
+              duration: 8 + Math.random() * 4,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              ease: "easeInOut",
+              repeatType: "reverse"
             }}
           >
             {Math.random() > 0.5 ? '1' : '0'}

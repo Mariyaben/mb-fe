@@ -23,10 +23,68 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Removed all transitions to prevent any motion */
   background: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #111111 50%, #1a1a1a 75%, #000000 100%);
   background-attachment: fixed;
   min-height: 100vh;
+}
+
+/* Static night sky background */
+.night-sky {
+  background: radial-gradient(ellipse at top, #0f172a 0%, #1e293b 50%, #000000 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  animation: skyShift 15s ease-in-out infinite !important;
+}
+
+/* Static stars - no animation */
+.static-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: starFloat 5s ease-in-out infinite !important;
+  transition: none !important;
+}
+
+.static-star.bright {
+  width: 3px;
+  height: 3px;
+  opacity: 1;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  animation: brightStarFloat 6s ease-in-out infinite !important;
+}
+
+.static-star.dim {
+  width: 1px;
+  height: 1px;
+  opacity: 0.4;
+  animation: dimStarFloat 7s ease-in-out infinite !important;
+}
+
+/* Static constellation lines */
+.constellation-line {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1;
+  animation: constellationDrift 8s ease-in-out infinite !important;
+  transition: none !important;
+}
+
+/* Ensure smooth framer-motion animations */
+[data-framer-motion] {
+  will-change: transform, opacity;
+}
+
+/* Smooth scrolling for all elements */
+* {
+  scroll-behavior: smooth;
 }
 
 /* Elegant black theme scrollbar */
@@ -65,28 +123,18 @@ body {
     @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
   }
   
-  .bg-gradient-mesh {
-    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #f97316);
-    background-size: 400% 400%;
-    animation: gradient 3s ease infinite;
-  }
-  
-  .bg-gradient-mesh-light {
-    background: linear-gradient(45deg, #60a5fa, #a855f7, #f472b6, #fb923c);
-    background-size: 400% 400%;
-    animation: gradient 3s ease infinite;
-  }
+  /* Removed all animated gradient mesh classes */
   
   .shadow-glow {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 20px rgba(156, 163, 175, 0.5);
   }
   
   .shadow-glow-lg {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 40px rgba(156, 163, 175, 0.3);
   }
   
   .shadow-glow-xl {
-    box-shadow: 0 0 60px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 60px rgba(156, 163, 175, 0.2);
   }
   
   .backdrop-blur-xs {
@@ -94,85 +142,30 @@ body {
   }
   
   .drop-shadow-glow {
-    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+    filter: drop-shadow(0 0 10px rgba(156, 163, 175, 0.5));
   }
 }
 
-/* Animation keyframes */
-@keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6;
-  }
-  100% {
-    box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-/* Theme transitions */
-* {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
+/* Removed ALL animation keyframes and transitions */
 
 /* Custom scrollbar for Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3b82f6 #f1f5f9;
+  scrollbar-color: #9ca3af #f1f5f9;
 }
 
 .dark * {
-  scrollbar-color: #60a5fa #1e293b;
+  scrollbar-color: #9ca3af #1e293b;
 }
 
-/* Loading animation */
+/* Loading animation - Static only */
 .loading-dots {
   display: inline-block;
 }
 
 .loading-dots::after {
   content: '';
-  animation: dots 1.5s steps(5, end) infinite;
-}
-
-@keyframes dots {
-  0%, 20% {
-    content: '';
-  }
-  40% {
-    content: '.';
-  }
-  60% {
-    content: '..';
-  }
-  80%, 100% {
-    content: '...';
-  }
+  /* Removed animation to prevent motion */
 }
 
 /* Glass morphism effect */
@@ -205,14 +198,14 @@ pre {
 
 code {
   font-family: 'JetBrains Mono', monospace;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(156, 163, 175, 0.1);
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
   font-size: 0.875em;
 }
 
 .dark code {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(156, 163, 175, 0.2);
 }
 
 /* Link styles */
@@ -227,18 +220,218 @@ a:hover {
 
 /* Button focus styles */
 button:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #9ca3af;
   outline-offset: 2px;
 }
 
 /* Input focus styles */
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #9ca3af;
   outline-offset: 2px;
 }
 
 /* Disable transitions during theme switch for better performance */
 .theme-transitioning * {
   transition: none !important;
+}
+
+/* Additional static night sky elements */
+.static-nebula {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.05;
+  animation: nebulaFloat 150s ease-in-out infinite;
+  transition: none !important;
+}
+
+.static-nebula.blue {
+  background: radial-gradient(circle, #6b7280, transparent);
+  animation: nebulaFloat 180s ease-in-out infinite;
+}
+
+.static-nebula.purple {
+  background: radial-gradient(circle, #7c3aed, transparent);
+  animation: nebulaFloat 200s ease-in-out infinite;
+}
+
+.static-nebula.green {
+  background: radial-gradient(circle, #059669, transparent);
+  animation: nebulaFloat 220s ease-in-out infinite;
+}
+
+/* Shooting Star Effects */
+.shooting-star-trail {
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  z-index: 20;
+  background: white !important;
+  width: 2px !important;
+  height: 2px !important;
+}
+
+.shooting-star-head {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 1), 0 0 16px rgba(255, 255, 255, 0.6);
+  z-index: 21;
+  background: white !important;
+  width: 4px !important;
+  height: 4px !important;
+}
+
+.stardust-particle {
+  box-shadow: 0 0 3px rgba(255, 255, 0, 0.8);
+  z-index: 22;
+  background: #fbbf24 !important;
+  width: 2px !important;
+  height: 2px !important;
+}
+
+/* Shooting Star Animations */
+@keyframes shootingStarTrail {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px) translateY(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStarHead {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px) translateY(100px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes stardustBurst {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes stardustParticle {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px) translateY(30px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Very slow and elegant keyframe animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes skyShift {
+  0%, 100% {
+    background: radial-gradient(ellipse at top, #0f172a 0%, #1e293b 50%, #000000 100%);
+  }
+  25% {
+    background: radial-gradient(ellipse at 25% 25%, #0f172a 0%, #1e293b 50%, #000000 100%);
+  }
+  50% {
+    background: radial-gradient(ellipse at 50% 50%, #0f172a 0%, #1e293b 50%, #000000 100%);
+  }
+  75% {
+    background: radial-gradient(ellipse at 75% 75%, #0f172a 0%, #1e293b 50%, #000000 100%);
+  }
+}
+
+@keyframes starFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.8;
+  }
+  33% {
+    transform: translateY(-8px) translateX(4px);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translateY(4px) translateX(-4px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes brightStarFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-12px) translateX(6px) scale(1.15);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(6px) translateX(-6px) scale(1.25);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-4px) translateX(4px) scale(1.08);
+    opacity: 0.95;
+  }
+}
+
+@keyframes dimStarFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-4px) translateX(4px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes constellationDrift {
+  0%, 100% {
+    opacity: 0.15;
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    opacity: 0.25;
+    transform: translateX(4px) translateY(-2px);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateX(-2px) translateY(4px);
+  }
+  75% {
+    opacity: 0.3;
+    transform: translateX(2px) translateY(-2px);
+  }
+}
+
+@keyframes nebulaFloat {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) scale(1);
+    opacity: 0.05;
+  }
+  33% {
+    transform: translateX(25px) translateY(-15px) scale(1.08);
+    opacity: 0.08;
+  }
+  66% {
+    transform: translateX(-15px) translateY(25px) scale(0.92);
+    opacity: 0.03;
+  }
 }

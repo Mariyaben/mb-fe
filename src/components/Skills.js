@@ -58,7 +58,8 @@ const FloatingParticle = ({ delay, duration, x, y }) => (
       duration: duration,
       repeat: Infinity,
       delay: delay,
-      ease: "easeInOut"
+      ease: "easeInOut",
+      repeatType: "reverse"
     }}
   />
 );
@@ -101,7 +102,7 @@ const InteractiveSkillCard = ({ skill, index, isHovered, onHover }) => {
                   skill.bgColor ? '' : 'bg-gradient-to-br from-primary-500/20 to-secondary-500/20'
                 }`}
                 style={{
-                  background: skill.bgColor || 'linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%)'
+                  background: skill.bgColor || 'linear-gradient(135deg, rgba(107, 114, 128, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%)'
                 }}
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
@@ -227,17 +228,9 @@ const SkillCategoryCard = ({ category, categoryIndex, isHovered, onHover, inView
                   rotateZ: 2,
                 }}
               >
-                {/* Animated Background Pattern */}
-                <motion.div
+                {/* Static Background Pattern - Removed motion */}
+                <div
                   className="absolute inset-0 opacity-20"
-                  animate={{
-                    backgroundPosition: ["0% 0%", "100% 100%"],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                  }}
                   style={{
                     background: `radial-gradient(circle at 50% 50%, ${skill.color || '#ffffff'} 0%, transparent 50%)`
                   }}
@@ -297,16 +290,16 @@ const Skills = () => {
       id: 'programming',
       title: 'Programming Languages',
       icon: Code,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-gray-500 to-cyan-500',
       skills: [
         { name: 'Python', icon: SiPython, color: 'text-yellow-400', bgColor: 'rgba(255, 193, 7, 0.2)' },
-        { name: 'C++', icon: SiCplusplus, color: 'text-blue-500', bgColor: 'rgba(59, 130, 246, 0.2)' },
+        { name: 'C++', icon: SiCplusplus, color: 'text-gray-500', bgColor: 'rgba(107, 114, 128, 0.2)' },
         { name: 'Java', icon: Code, color: 'text-orange-500', bgColor: 'rgba(249, 115, 22, 0.2)' },
-        { name: 'R', icon: Code, color: 'text-blue-600', bgColor: 'rgba(37, 99, 235, 0.2)' },
+        { name: 'R', icon: Code, color: 'text-gray-600', bgColor: 'rgba(75, 85, 99, 0.2)' },
         { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-400', bgColor: 'rgba(255, 193, 7, 0.2)' },
-        { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-600', bgColor: 'rgba(37, 99, 235, 0.2)' },
+        { name: 'TypeScript', icon: SiTypescript, color: 'text-gray-600', bgColor: 'rgba(75, 85, 99, 0.2)' },
         { name: 'HTML', icon: SiHtml5, color: 'text-orange-500', bgColor: 'rgba(249, 115, 22, 0.2)' },
-        { name: 'CSS', icon: SiCss3, color: 'text-blue-500', bgColor: 'rgba(59, 130, 246, 0.2)' },
+        { name: 'CSS', icon: SiCss3, color: 'text-gray-500', bgColor: 'rgba(107, 114, 128, 0.2)' },
         { name: 'Bash/Shell', icon: Code, color: 'text-green-500', bgColor: 'rgba(34, 197, 94, 0.2)' },
       ]
     },
@@ -340,12 +333,12 @@ const Skills = () => {
       icon: Globe,
       color: 'from-green-500 to-emerald-500',
       skills: [
-        { name: 'ReactJS', icon: SiReact, color: 'text-blue-400', bgColor: 'rgba(96, 165, 250, 0.2)' },
+        { name: 'ReactJS', icon: SiReact, color: 'text-gray-400', bgColor: 'rgba(156, 163, 175, 0.2)' },
         { name: 'Next.js', icon: Globe, color: 'text-black', bgColor: 'rgba(0, 0, 0, 0.2)' },
         { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-500', bgColor: 'rgba(34, 197, 94, 0.2)' },
         { name: 'Django', icon: Server, color: 'text-green-700', bgColor: 'rgba(21, 128, 61, 0.2)' },
         { name: 'MERN Stack', icon: Server, color: 'text-green-600', bgColor: 'rgba(22, 163, 74, 0.2)' },
-        { name: 'RESTful APIs', icon: GitPullRequest, color: 'text-blue-500', bgColor: 'rgba(59, 130, 246, 0.2)' },
+        { name: 'RESTful APIs', icon: GitPullRequest, color: 'text-gray-500', bgColor: 'rgba(107, 114, 128, 0.2)' },
         { name: 'GraphQL', icon: SiGraphql, color: 'text-pink-500', bgColor: 'rgba(236, 72, 153, 0.2)' },
         { name: 'UI/UX Design', icon: Palette, color: 'text-purple-500', bgColor: 'rgba(168, 85, 247, 0.2)' },
         { name: 'Figma', icon: SiFigma, color: 'text-purple-600', bgColor: 'rgba(147, 51, 234, 0.2)' },
@@ -357,8 +350,8 @@ const Skills = () => {
       icon: Database,
       color: 'from-orange-500 to-red-500',
       skills: [
-        { name: 'MySQL', icon: SiMysql, color: 'text-blue-600', bgColor: 'rgba(37, 99, 235, 0.2)' },
-        { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-500', bgColor: 'rgba(59, 130, 246, 0.2)' },
+        { name: 'MySQL', icon: SiMysql, color: 'text-gray-600', bgColor: 'rgba(75, 85, 99, 0.2)' },
+        { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-gray-500', bgColor: 'rgba(107, 114, 128, 0.2)' },
         { name: 'MongoDB', icon: SiMongodb, color: 'text-green-500', bgColor: 'rgba(34, 197, 94, 0.2)' },
       ]
     },
@@ -373,7 +366,7 @@ const Skills = () => {
         { name: 'AWS Lambda', icon: SiAmazonwebservices, color: 'text-orange-500', bgColor: 'rgba(249, 115, 22, 0.2)' },
         { name: 'AWS EC2', icon: SiAmazonwebservices, color: 'text-orange-500', bgColor: 'rgba(249, 115, 22, 0.2)' },
         { name: 'GitHub Actions', icon: SiGithubactions, color: 'text-black', bgColor: 'rgba(0, 0, 0, 0.2)' },
-        { name: 'CI/CD', icon: Workflow, color: 'text-blue-500', bgColor: 'rgba(59, 130, 246, 0.2)' },
+        { name: 'CI/CD', icon: Workflow, color: 'text-gray-500', bgColor: 'rgba(107, 114, 128, 0.2)' },
       ]
     },
     {
@@ -394,12 +387,12 @@ const Skills = () => {
       skills: [
         { name: 'Git', icon: SiGit, color: 'text-orange-500', bgColor: 'rgba(249, 115, 22, 0.2)' },
         { name: 'Linux', icon: SiLinux, color: 'text-black', bgColor: 'rgba(0, 0, 0, 0.2)' },
-        { name: 'LaTeX', icon: FileText, color: 'text-blue-600', bgColor: 'rgba(37, 99, 235, 0.2)' },
+        { name: 'LaTeX', icon: FileText, color: 'text-gray-600', bgColor: 'rgba(75, 85, 99, 0.2)' },
         { name: 'Jupyter Notebook', icon: SiJupyter, color: 'text-orange-500', bgColor: 'rgba(249, 115, 22, 0.2)' },
         { name: 'Postman', icon: SiPostman, color: 'text-orange-500', bgColor: 'rgba(249, 115, 22, 0.2)' },
-        { name: 'VS Code', icon: Code, color: 'text-blue-500', bgColor: 'rgba(59, 130, 246, 0.2)' },
+        { name: 'VS Code', icon: Code, color: 'text-gray-500', bgColor: 'rgba(107, 114, 128, 0.2)' },
         { name: 'PyCharm', icon: Code, color: 'text-green-500', bgColor: 'rgba(34, 197, 94, 0.2)' },
-        { name: 'Jira', icon: SiJira, color: 'text-blue-500', bgColor: 'rgba(59, 130, 246, 0.2)' },
+        { name: 'Jira', icon: SiJira, color: 'text-gray-500', bgColor: 'rgba(107, 114, 128, 0.2)' },
       ]
     },
     {
@@ -426,11 +419,11 @@ const Skills = () => {
       
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <FloatingParticle delay={0} duration={8} x={100} y={-50} />
-        <FloatingParticle delay={2} duration={10} x={-80} y={100} />
-        <FloatingParticle delay={4} duration={12} x={120} y={80} />
-        <FloatingParticle delay={6} duration={9} x={-60} y={-120} />
-        <FloatingParticle delay={8} duration={11} x={90} y={-90} />
+        <FloatingParticle delay={0} duration={20} x={100} y={-50} />
+        <FloatingParticle delay={2} duration={25} x={-80} y={100} />
+        <FloatingParticle delay={4} duration={30} x={120} y={80} />
+        <FloatingParticle delay={6} duration={22} x={-60} y={-120} />
+        <FloatingParticle delay={8} duration={28} x={90} y={-90} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -502,7 +495,7 @@ const Skills = () => {
               {[
                 { name: 'Rust', icon: Code, color: 'text-orange-500', description: 'Systems programming' },
                 { name: 'WebAssembly', icon: Code, color: 'text-purple-500', description: 'High-performance web' },
-                { name: 'Quantum Computing', icon: Cpu, color: 'text-blue-500', description: 'Next-gen computing' },
+                { name: 'Quantum Computing', icon: Cpu, color: 'text-gray-500', description: 'Next-gen computing' },
               ].map((item, index) => {
                 const ItemIcon = item.icon;
                 return (

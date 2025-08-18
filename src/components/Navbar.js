@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Menu, X, Code, ChevronDown, Sparkles, Zap, Target } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import ThemeToggle from './ThemeToggle';
 
 const Navbar = ({ currentSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,10 +59,11 @@ const Navbar = ({ currentSection }) => {
             scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 3 + i * 0.5,
+            duration: 12 + i * 2,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: i * 0.2,
+            delay: i * 0.3,
+            repeatType: "reverse"
           }}
         />
       ))}
@@ -76,7 +76,7 @@ const Navbar = ({ currentSection }) => {
       <div className="fixed top-0 left-0 right-0 h-20 z-40 pointer-events-none">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-secondary-500/10 to-primary-500/10" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(107,114,128,0.1)_0%,transparent_50%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.1)_0%,transparent_50%)]" />
         </div>
       </div>
@@ -131,13 +131,18 @@ const Navbar = ({ currentSection }) => {
                   className="absolute inset-0 rounded-2xl overflow-hidden"
                   animate={{
                     background: [
-                      'linear-gradient(45deg, #3b82f6, #8b5cf6)',
+                      'linear-gradient(45deg, #6b7280, #8b5cf6)',
                       'linear-gradient(45deg, #8b5cf6, #ec4899)',
-                      'linear-gradient(45deg, #ec4899, #3b82f6)',
-                      'linear-gradient(45deg, #3b82f6, #8b5cf6)',
+                      'linear-gradient(45deg, #ec4899, #6b7280)',
+                      'linear-gradient(45deg, #6b7280, #8b5cf6)',
                     ],
                   }}
-                  transition={{ duration: 3, repeat: Infinity }}
+                  transition={{ 
+                    duration: 20, 
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    repeatType: "reverse"
+                  }}
                 />
                 
                 <Code className="w-6 h-6 text-white relative z-10" />
@@ -148,7 +153,12 @@ const Navbar = ({ currentSection }) => {
                   animate={{
                     opacity: [0.2, 0.5, 0.2],
                   }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                  transition={{ 
+                    duration: 8, 
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    repeatType: "reverse"
+                  }}
                 />
               </motion.div>
 
@@ -159,14 +169,14 @@ const Navbar = ({ currentSection }) => {
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}
                   whileHover={{
-                    background: 'linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899)',
+                    background: 'linear-gradient(45deg, #6b7280, #8b5cf6, #ec4899)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                   }}
                   transition={{ duration: 0.3 }}
-                >
-                  Portfolio
-                </motion.span>
+                                 >
+                   
+                 </motion.span>
                 
                 {/* Underline effect */}
                 <motion.div
@@ -252,40 +262,38 @@ const Navbar = ({ currentSection }) => {
               })}
             </div>
 
-            {/* Theme Toggle & Mobile Menu Button */}
-            <div className="flex items-center space-x-4">
-              <ThemeToggle />
-              
-              <motion.button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`relative p-3 rounded-xl transition-all duration-300 ${
-                  isDark
-                    ? 'text-gray-300 hover:bg-gray-800/50 hover:text-primary-300'
-                    : 'text-gray-600 hover:bg-light-200/50 hover:text-primary-500'
-                }`}
-                whileHover={{ 
-                  scale: 1.05,
-                  rotate: isMobileMenuOpen ? 180 : 0,
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {isMobileMenuOpen ? (
-                  <X className="w-6 h-6" />
-                ) : (
-                  <Menu className="w-6 h-6" />
-                )}
-                
-                {/* Button glow effect */}
-                <motion.div
-                  className={`absolute inset-0 rounded-xl ${
-                    isDark ? 'bg-primary-500/20' : 'bg-primary-100/50'
-                  }`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileHover={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.2 }}
-                />
-              </motion.button>
-            </div>
+                         {/* Mobile Menu Button */}
+             <div className="flex items-center space-x-4">
+               <motion.button
+                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                 className={`relative p-3 rounded-xl transition-all duration-300 ${
+                   isDark
+                     ? 'text-gray-300 hover:bg-gray-800/50 hover:text-primary-300'
+                     : 'text-gray-600 hover:bg-light-200/50 hover:text-primary-500'
+                 }`}
+                 whileHover={{ 
+                   scale: 1.05,
+                   rotate: isMobileMenuOpen ? 180 : 0,
+                 }}
+                 whileTap={{ scale: 0.95 }}
+               >
+                 {isMobileMenuOpen ? (
+                   <X className="w-6 h-6" />
+                 ) : (
+                   <Menu className="w-6 h-6" />
+                 )}
+                 
+                 {/* Button glow effect */}
+                 <motion.div
+                   className={`absolute inset-0 rounded-xl ${
+                     isDark ? 'bg-primary-500/20' : 'bg-primary-100/50'
+                   }`}
+                   initial={{ opacity: 0, scale: 0.8 }}
+                   whileHover={{ opacity: 1, scale: 1 }}
+                   transition={{ duration: 0.2 }}
+                 />
+               </motion.button>
+             </div>
           </div>
 
           {/* Mobile Menu */}
@@ -361,7 +369,12 @@ const Navbar = ({ currentSection }) => {
           }}
           transition={{ 
             width: { duration: 0.1 },
-            backgroundPosition: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+            backgroundPosition: { 
+              duration: 15, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              repeatType: "reverse"
+            }
           }}
         />
       </motion.nav>

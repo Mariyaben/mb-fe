@@ -202,11 +202,11 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative py-20 overflow-hidden">
-      {/* Background */}
-      <motion.div
+      {/* Background - Removed to show stars through */}
+      {/* <motion.div
         className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
         style={{ y }}
-      />
+      /> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
