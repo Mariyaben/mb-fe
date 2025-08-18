@@ -8,7 +8,6 @@ import { useTheme } from './context/ThemeContext';
 
 // Lazy load components for better performance
 const Hero = React.lazy(() => import('./components/Hero'));
-const About = React.lazy(() => import('./components/About'));
 const Skills = React.lazy(() => import('./components/Skills'));
 const Projects = React.lazy(() => import('./components/Projects'));
 const Experience = React.lazy(() => import('./components/Experience'));
@@ -264,7 +263,6 @@ const AppContent = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <Hero />
-                  <About />
                   <Skills />
                   <Projects />
                   <Experience />

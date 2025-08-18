@@ -6,12 +6,7 @@ import {
   Phone, 
   MapPin, 
   Send, 
-  Github, 
-  Linkedin, 
-  Twitter,
-  MessageSquare,
-  Clock,
-  Globe
+  MessageSquare
 } from 'lucide-react';
 
 const Contact = () => {
@@ -55,39 +50,27 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@yourname.com',
-      link: 'mailto:hello@yourname.com',
+      value: 'mariyaben02@gmail.com',
+      link: 'mailto:mariyaben02@gmail.com',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+91 8547414280',
+      link: 'tel:+918547414280',
       color: 'from-green-500 to-emerald-500'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Kasaragod, Kerala, India',
       link: '#',
       color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: Clock,
-      title: 'Available',
-      value: 'Mon - Fri, 9AM - 6PM',
-      link: '#',
-      color: 'from-orange-500 to-red-500'
     }
   ];
 
-  const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub', color: 'hover:text-gray-400' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:text-blue-400' },
-    { icon: Twitter, href: '#', label: 'Twitter', color: 'hover:text-blue-400' },
-    { icon: Globe, href: '#', label: 'Website', color: 'hover:text-green-400' },
-  ];
+  // Remove socialLinks array since we're removing the socials section
 
   return (
     <section id="contact" className="relative py-20 overflow-hidden">
@@ -158,29 +141,7 @@ const Contact = () => {
               })}
             </div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <motion.a
-                      key={social.label}
-                      href={social.href}
-                      className={`p-3 bg-gray-900/50 border border-gray-700/50 rounded-lg text-gray-400 ${social.color} transition-all duration-300`}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={inView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ delay: 0.8 + index * 0.1 }}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <Icon className="w-5 h-5" />
-                    </motion.a>
-                  );
-                })}
-              </div>
-            </div>
+            {/* Social Links section removed */}
           </motion.div>
 
           {/* Contact Form */}

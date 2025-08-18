@@ -25,7 +25,6 @@ const Navbar = ({ currentSection }) => {
 
   const navItems = [
     { id: 'home', label: 'Home', href: '#home', icon: Sparkles },
-    { id: 'about', label: 'About', href: '#about', icon: Target },
     { id: 'skills', label: 'Skills', href: '#skills', icon: Zap },
     { id: 'projects', label: 'Projects', href: '#projects', icon: Code },
     { id: 'experience', label: 'Experience', href: '#experience', icon: ChevronDown },

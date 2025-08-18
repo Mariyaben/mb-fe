@@ -28,6 +28,7 @@ const Hero = () => {
   const texts = [
     'AI & Data Science Specialist',
     'International Exchange Student',
+    'Charpak Excellence Scholar',
     'Aspiring Startup Founder',
     'Full-Stack Developer',
     'Machine Learning Engineer'
@@ -152,7 +153,6 @@ const Hero = () => {
            >
              As a 9th semester MSc student specializing in AI and Data Science at CUSAT, I blend academic excellence with innovation. 
              Currently an exchange student at ENSSAT, France, I'm passionate about solving real-world challenges through technology. 
-             Winner of Dreamvestor Startup Competition 2025 and presenter at IBM GenAI Conclave.
            </motion.p>
 
           {/* CTA Buttons */}

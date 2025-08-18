@@ -24,7 +24,6 @@ import {
   Server,
   GitPullRequest,
   Workflow,
-  Rocket,
   Settings,
   BookOpen,
   Send,
@@ -484,18 +483,17 @@ const Skills = () => {
           </div>
 
           <div className="relative z-10">
-            <div className="flex items-center justify-center mb-6">
-              <Rocket className="w-8 h-8 text-primary-400 mr-3" />
-              <h3 className="text-2xl font-bold text-white">
-                Currently Learning & Exploring
-              </h3>
-            </div>
+                      <div className="flex items-center justify-center mb-6">
+            <h3 className="text-2xl font-bold text-white">
+              Currently Learning & Exploring
+            </h3>
+          </div>
             
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { name: 'Rust', icon: Code, color: 'text-orange-500', description: 'Systems programming' },
-                { name: 'WebAssembly', icon: Code, color: 'text-purple-500', description: 'High-performance web' },
-                { name: 'Quantum Computing', icon: Cpu, color: 'text-gray-500', description: 'Next-gen computing' },
+                { name: 'Flutter', icon: Code, color: 'text-blue-500', description: 'Cross-platform mobile development' },
+                { name: 'AutoGen', icon: Brain, color: 'text-purple-500', description: 'Multi-agent AI framework' },
+                { name: 'RAGatouille', icon: Brain, color: 'text-indigo-500', description: 'Advanced RAG implementation' },
               ].map((item, index) => {
                 const ItemIcon = item.icon;
                 return (
@@ -520,15 +518,7 @@ const Skills = () => {
                       </div>
                     </div>
                     
-                    {/* Progress indicator */}
-                    <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${30 + index * 20}%` }}
-                        transition={{ duration: 2, delay: 1.6 + index * 0.2 }}
-                      />
-                    </div>
+
                   </motion.div>
                 );
               })}

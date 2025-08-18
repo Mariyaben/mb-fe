@@ -13,8 +13,6 @@ import {
   Github,
   ExternalLink,
   Eye,
-  Star,
-  TrendingUp,
   Lightbulb,
   Rocket,
   Shield,
@@ -53,11 +51,8 @@ const Projects = () => {
       category: "ai-ml",
       technologies: ["Python", "Deep Learning", "Graph Neural Networks", "Attention Mechanisms"],
       icon: Brain,
-      highlight: true,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Research Innovation",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/Fusion-Enhanced-Drug-Target-Affinity-Prediction",
+      demo: "#"
     },
     {
       id: 2,
@@ -66,11 +61,8 @@ const Projects = () => {
       category: "ai-ml",
       technologies: ["RAG", "NLP", "Fine-tuning", "Conversational AI"],
       icon: BookOpen,
-      highlight: true,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "AI Innovation",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/AI-Sherlock-Holmes",
+      demo: "#"
     },
     {
       id: 3,
@@ -79,10 +71,8 @@ const Projects = () => {
       category: "ai-ml",
       technologies: ["Python", "NLP", "Naive Bayes", "Morphological Analysis"],
       icon: Target,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Language Processing",
-      difficulty: "Intermediate"
+      github: "https://github.com/Mariyaben/malayalam-text-classifier",
+      demo: "https://malayalam-text-classifiergit-6m8tbuwkvkiqwnpcfouux2.streamlit.app"
     },
     {
       id: 4,
@@ -91,10 +81,8 @@ const Projects = () => {
       category: "ai-ml",
       technologies: ["Deep Learning", "Computer Vision", "Environmental AI", "OpenCV"],
       icon: Shield,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Environmental Impact",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/Mitigating-Marine-Pollution-NCMPE",
+      demo: "#"
     },
     {
       id: 5,
@@ -103,10 +91,8 @@ const Projects = () => {
       category: "ai-ml",
       technologies: ["Machine Learning", "Computer Vision", "Real-time Processing", "Accessibility"],
       icon: Users,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Accessibility",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/personalized_sign_language_interpreter",
+      demo: "#"
     },
     {
       id: 6,
@@ -115,11 +101,8 @@ const Projects = () => {
       category: "web",
       technologies: ["Django", "React", "NLP", "AI", "Legal Tech"],
       icon: Building,
-      highlight: true,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Startup Winner",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/Lejit-AI",
+      demo: "#"
     },
     {
       id: 7,
@@ -128,11 +111,8 @@ const Projects = () => {
       category: "ai-ml",
       technologies: ["LLM", "RAG", "IBM WatsonX", "Legal AI"],
       icon: Award,
-      highlight: true,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "IBM Collaboration",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/LegalGPT",
+      demo: "#"
     },
     {
       id: 8,
@@ -141,10 +121,8 @@ const Projects = () => {
       category: "ai-ml",
       technologies: ["TensorFlow", "scikit-learn", "Healthcare AI", "Machine Learning"],
       icon: Shield,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Healthcare",
-      difficulty: "Intermediate"
+      github: "https://github.com/Mariyaben/Hackify",
+      demo: "#"
     },
     {
       id: 9,
@@ -153,10 +131,8 @@ const Projects = () => {
       category: "ai-ml",
       technologies: ["YOLO", "Computer Vision", "Real-time AI", "Driving Assistance"],
       icon: Car,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Transportation",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/Hackathena_2024-LearnDrive.AI-",
+      demo: "#"
     },
     {
       id: 10,
@@ -165,10 +141,8 @@ const Projects = () => {
       category: "web",
       technologies: ["Automation", "HR Tech", "Office Management", "AI"],
       icon: Building,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Business Efficiency",
-      difficulty: "Intermediate"
+      github: "https://github.com/Mariyaben/OfficeFlow",
+      demo: "#"
     },
     {
       id: 11,
@@ -177,10 +151,8 @@ const Projects = () => {
       category: "web",
       technologies: ["Recommendation Systems", "FinTech", "Personalization", "AI"],
       icon: Landmark,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "FinTech Innovation",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/HPAI_Banking_Assist",
+      demo: "#"
     },
     {
       id: 12,
@@ -189,10 +161,8 @@ const Projects = () => {
       category: "mobile",
       technologies: ["Embedded Systems", "Linux", "Raspberry Pi", "IoT"],
       icon: Zap,
-      github: "https://github.com/Mariyaben",
-      demo: "#",
-      impact: "Embedded Systems",
-      difficulty: "Advanced"
+      github: "https://github.com/Mariyaben/Yocto-Project-Raspberry-Pi",
+      demo: "#"
     }
   ];
 
@@ -329,12 +299,6 @@ const Projects = () => {
                         isDark ? 'text-primary-400' : 'text-primary-600'
                       }`} />
                     </div>
-                    {project.highlight && (
-                      <div className="flex items-center space-x-1">
-                        <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                        <span className="text-xs text-yellow-500 font-medium">Featured</span>
-                      </div>
-                    )}
                   </div>
 
                   {/* Project Title */}
@@ -352,7 +316,7 @@ const Projects = () => {
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.slice(0, 3).map((tech, techIndex) => (
                       <span
                         key={techIndex}
@@ -372,29 +336,8 @@ const Projects = () => {
                     )}
                   </div>
 
-                  {/* Project Impact & Difficulty */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-2">
-                      <TrendingUp className={`w-4 h-4 ${
-                        isDark ? 'text-green-400' : 'text-green-600'
-                      }`} />
-                      <span className={`text-xs ${
-                        isDark ? 'text-green-400' : 'text-green-600'
-                      }`}>
-                        {project.impact}
-                      </span>
-                    </div>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      project.difficulty === 'Advanced' 
-                        ? isDark ? 'bg-red-500/20 text-red-400' : 'bg-red-100 text-red-600'
-                        : isDark ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-600'
-                    }`}>
-                      {project.difficulty}
-                    </span>
-                  </div>
-
                   {/* Action Buttons */}
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 relative z-10">
                     <motion.a
                       href={project.github}
                       target="_blank"
@@ -432,7 +375,7 @@ const Projects = () => {
 
                   {/* Hover Overlay */}
                   <motion.div
-                    className={`absolute inset-0 rounded-2xl ${
+                    className={`absolute inset-0 rounded-2xl z-0 ${
                       isDark ? 'bg-primary-500/10' : 'bg-primary-100/20'
                     }`}
                     initial={{ opacity: 0 }}

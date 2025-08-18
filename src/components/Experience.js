@@ -9,7 +9,11 @@ import {
   Award,
   TrendingUp,
   Users,
-  Globe
+  Globe,
+  Brain,
+  Scale,
+  Microscope,
+  Building2
 } from 'lucide-react';
 
 const Experience = () => {
@@ -25,79 +29,96 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: 'TechCorp Solutions',
-      position: 'Senior Full-Stack Developer',
-      period: '2022 - Present',
-      location: 'San Francisco, CA',
-      description: 'Leading development of AI-powered applications and mentoring junior developers.',
-      technologies: ['React', 'Node.js', 'Python', 'TensorFlow', 'AWS'],
+      company: 'French Government',
+      position: 'France Excellence Charpak Scholar',
+      period: '2024',
+      location: 'France',
+      description: 'Prestigious scholarship awarded by the French government to support international students pursuing higher education in France.',
+      technologies: ['Scholarship', 'International Education', 'French Government', 'Academic Excellence'],
       achievements: [
-        'Led team of 8 developers in building AI-powered e-commerce platform',
-        'Improved application performance by 40% through optimization',
-        'Implemented CI/CD pipeline reducing deployment time by 60%',
-        'Mentored 5 junior developers and conducted technical interviews'
+        'Selected as a recipient of the prestigious France Excellence Charpak Scholarship',
+        'Recognized for academic excellence and potential by the French government',
+        'Awarded financial support for pursuing higher education in France',
+        'Demonstrated commitment to international academic collaboration'
       ],
-      logo: '🏢',
-      color: 'from-blue-500 to-cyan-500'
+      logo: Award,
+      color: 'bg-blue-100'
     },
     {
       id: 2,
-      company: 'InnovateLabs',
-      position: 'AI/ML Engineer',
-      period: '2021 - 2022',
-      location: 'New York, NY',
-      description: 'Developed machine learning models for predictive analytics and computer vision.',
-      technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'Docker'],
+      company: 'Geojit Technologies',
+      position: 'Machine Learning Intern',
+      period: 'Aug 2024 - Aug 2025',
+      location: 'Financial Services and Technology Company',
+      description: 'Working on machine learning projects in the financial services domain, developing predictive models and AI solutions.',
+      technologies: ['Python', 'Machine Learning', 'TensorFlow', 'Pandas', 'Scikit-learn', 'Financial Data Analysis'],
       achievements: [
-        'Built computer vision system achieving 95% accuracy in object detection',
-        'Developed predictive models reducing customer churn by 25%',
-        'Optimized ML pipeline reducing training time by 50%',
-        'Published 3 research papers on AI applications'
+        'Developed ML models for financial data analysis and prediction',
+        'Worked on real-time financial data processing systems',
+        'Collaborated with data science team on model optimization',
+        'Gained hands-on experience with financial technology applications'
       ],
-      logo: '🧠',
-      color: 'from-purple-500 to-pink-500'
+      logo: Brain,
+      color: 'bg-gray-100'
     },
     {
       id: 3,
-      company: 'StartupHub',
-      position: 'Frontend Developer',
-      period: '2020 - 2021',
-      location: 'Austin, TX',
-      description: 'Built responsive web applications and collaborated with design teams.',
-      technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'GraphQL'],
+      company: 'Lejit AI',
+      position: 'Project Manager and Tech Team Lead',
+      period: 'Aug 2024 - Aug 2025',
+      location: 'AI-powered Legal Management Service',
+      description: 'Led a team of 8 developers in building AI-powered legal management solutions and managing project delivery.',
+      technologies: ['Project Management', 'Team Leadership', 'AI/ML', 'Legal Tech', 'Agile', 'Product Development'],
       achievements: [
-        'Developed 10+ responsive web applications',
-        'Improved user experience scores by 35%',
-        'Implemented design system used across 5 projects',
-        'Reduced bundle size by 30% through optimization'
+        'Successfully led a team of 8 developers across multiple projects',
+        'Managed project timelines and deliverables for legal tech solutions',
+        'Coordinated between technical and business stakeholders',
+        'Improved team productivity and project delivery efficiency'
       ],
-      logo: '🚀',
-      color: 'from-green-500 to-emerald-500'
+      logo: Scale,
+      color: 'bg-gray-100'
     },
     {
       id: 4,
-      company: 'Digital Dynamics',
-      position: 'Backend Developer',
-      period: '2019 - 2020',
-      location: 'Seattle, WA',
-      description: 'Built scalable backend systems and RESTful APIs.',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Redis'],
+      company: 'National Institute of Technology Karnataka',
+      position: 'Research Intern',
+      period: 'May - June 2024',
+      location: 'NIT Surathkal',
+      description: 'Conducted research in emerging technologies and contributed to academic research projects.',
+      technologies: ['Research', 'Academic Writing', 'Data Analysis', 'Emerging Technologies', 'Academic Collaboration'],
       achievements: [
-        'Built RESTful APIs serving 1M+ requests daily',
-        'Implemented caching strategy reducing response time by 70%',
-        'Designed database schema for 5 major applications',
-        'Set up monitoring and logging infrastructure'
+        'Contributed to cutting-edge research in emerging technologies',
+        'Collaborated with faculty and research scholars',
+        'Developed research methodologies and data analysis skills',
+        'Gained experience in academic research environment'
       ],
-      logo: '⚙️',
-      color: 'from-orange-500 to-red-500'
+      logo: Microscope,
+      color: 'bg-gray-100'
+    },
+    {
+      id: 5,
+      company: 'KPIT Technologies Ltd',
+      position: 'Student Intern',
+      period: 'June - July 2023',
+      location: 'Kochi, Kerala, India',
+      description: 'Gained practical experience in software development and technology solutions.',
+      technologies: ['Software Development', 'Technology Solutions', 'Corporate Environment', 'Team Collaboration'],
+      achievements: [
+        'Worked on real-world software development projects',
+        'Learned industry best practices and development methodologies',
+        'Collaborated with experienced developers and engineers',
+        'Gained exposure to corporate software development environment'
+      ],
+      logo: Building2,
+      color: 'bg-gray-100'
     }
   ];
 
   const stats = [
-    { label: 'Years Experience', value: '5+', icon: Calendar },
-    { label: 'Projects Delivered', value: '50+', icon: Briefcase },
-    { label: 'Technologies', value: '20+', icon: TrendingUp },
-    { label: 'Team Members Led', value: '15+', icon: Users },
+    { label: 'Years Experience', value: '3+', icon: Calendar },
+    { label: 'Projects Delivered', value: '10+', icon: Briefcase },
+    { label: 'Technologies', value: '15+', icon: TrendingUp },
+    { label: 'Team Members Led', value: '8+', icon: Users },
   ];
 
   return (
@@ -152,8 +173,8 @@ const Experience = () => {
                   }`}
                   whileHover={{ scale: 1.02, y: -2 }}
                 >
-                  <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${experience.color} flex items-center justify-center text-2xl`}>
-                    {experience.logo}
+                  <div className={`w-12 h-12 rounded-full ${experience.color} flex items-center justify-center`}>
+                    {React.createElement(experience.logo, { size: 24, className: "text-gray-700" })}
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
@@ -195,8 +216,8 @@ const Experience = () => {
               transition={{ delay: 0.4 }}
             >
               <div className="flex items-center space-x-3 mb-6">
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${experiences[selectedExperience]?.color} flex items-center justify-center text-2xl`}>
-                  {experiences[selectedExperience]?.logo}
+                <div className={`w-12 h-12 rounded-lg ${experiences[selectedExperience]?.color} flex items-center justify-center`}>
+                  {experiences[selectedExperience]?.logo && React.createElement(experiences[selectedExperience].logo, { size: 24, className: "text-gray-700" })}
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white">{experiences[selectedExperience]?.position}</h3>
@@ -205,19 +226,9 @@ const Experience = () => {
               </div>
 
               <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-white mb-3">Key Achievements</h4>
-                {experiences[selectedExperience]?.achievements.map((achievement, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start space-x-3"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: 0.6 + index * 0.1 }}
-                  >
-                    <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 flex-shrink-0" />
-                    <p className="text-gray-300 leading-relaxed">{achievement}</p>
-                  </motion.div>
-                ))}
+                <p className="text-gray-300 leading-relaxed">
+                  My diverse experiences across software development, team leadership, and AI technologies have given me a well-rounded perspective on building solutions. Each role has taught me valuable lessons about technology, people, and processes, helping me grow both technically and professionally.
+                </p>
               </div>
             </motion.div>
 
