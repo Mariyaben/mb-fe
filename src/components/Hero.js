@@ -163,6 +163,7 @@ const Hero = () => {
             transition={{ delay: 1.0, duration: 1.2 }} // Added duration for smoother animation
           >
             <motion.button
+              onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
               className={`flex items-center space-x-2 px-8 py-4 rounded-lg font-semibold transition-all duration-300 ${
                 isDark
                   ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-glow hover:shadow-glow-lg'
@@ -176,7 +177,10 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5" />
             </motion.button>
             
-            <motion.button
+            <motion.a
+              href="https://drive.google.com/file/d/1bcgxV2zJ5hYIfTnbdCPdcVnNAcpqa1sF/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`flex items-center space-x-2 px-8 py-4 rounded-lg font-semibold transition-all duration-300 ${
                 isDark
                   ? 'border border-primary-500/50 text-primary-400 hover:bg-primary-500/10'
@@ -187,8 +191,8 @@ const Hero = () => {
               transition={{ duration: 0.6 }} // Added explicit transition duration
             >
               <Download className="w-5 h-5" />
-              <span>Download CV</span>
-            </motion.button>
+              <span>View Resume</span>
+            </motion.a>
           </motion.div>
 
           {/* Social Links */}
