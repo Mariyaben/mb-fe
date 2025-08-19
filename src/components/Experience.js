@@ -15,6 +15,7 @@ import {
   Microscope,
   Building2
 } from 'lucide-react';
+import SEO from './SEO';
 
 const Experience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0);
@@ -123,7 +124,15 @@ const Experience = () => {
 
   return (
     <section id="experience" className="relative py-20 overflow-hidden">
-      {/* Background - Removed to show stars through */}
+      {/* SEO for Experience Section */}
+      <SEO 
+        title="Professional Experience"
+        description="Discover my professional journey including internships, research positions, and leadership roles. From machine learning internships to project management and research experience."
+        keywords="professional experience, work history, internships, research, project management, team leadership, machine learning, AI"
+        section="experience"
+      />
+      
+      {/* Background Elements */}
       {/* <motion.div
         className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
         style={{ y }}

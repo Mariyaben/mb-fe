@@ -8,6 +8,7 @@ import {
   Send, 
   MessageSquare
 } from 'lucide-react';
+import SEO from './SEO';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -74,6 +75,14 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative py-20 overflow-hidden">
+      {/* SEO for Contact Section */}
+      <SEO 
+        title="Contact Me"
+        description="Get in touch with Mariya for collaboration opportunities, project discussions, or professional inquiries. Available for freelance work and full-time positions."
+        keywords="contact, get in touch, collaboration, freelance, job opportunities, project discussion, professional inquiry"
+        section="contact"
+      />
+      
       {/* Background - Removed to show stars through */}
       {/* <motion.div
         className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"

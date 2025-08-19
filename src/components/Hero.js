@@ -11,6 +11,7 @@ import {
   Star
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import SEO from './SEO';
 
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -50,6 +51,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* SEO for Hero Section */}
+      <SEO 
+        title="Hero"
+        description="Mariya - AI & Data Science Specialist, International Exchange Student, Charpak Excellence Scholar, and Full-Stack Developer. Discover my journey and expertise."
+        keywords="AI specialist, data science, international student, charpak scholar, full stack developer, machine learning engineer"
+        section="hero"
+      />
+      
       {/* Background - Removed to show stars through */}
       {/* <motion.div
         className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
@@ -58,12 +67,7 @@ const Hero = () => {
 
       {/* Static Background Elements - Removed all motion */}
       <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="absolute top-20 left-20 w-32 h-32 rounded-full bg-gray-700/20 blur-3xl"
-        />
-        <div
-          className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-gray-600/20 blur-3xl"
-        />
+        {/* Removed colored blur elements */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
@@ -91,12 +95,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.6 }}
               />
-              {/* Static glow effect - Removed motion */}
-              <div
-                className={`absolute inset-0 rounded-full ${
-                  isDark ? 'bg-primary-500/20' : 'bg-primary-100/30'
-                }`}
-              />
+              {/* Removed colored glow effect overlay */}
             </div>
           </motion.div>
 

@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Toaster } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './context/ThemeContext';
 import { useTheme } from './context/ThemeContext';
+import SEO from './components/SEO';
+import PerformanceOptimizer from './components/PerformanceOptimizer';
 
 // Lazy load components for better performance
 const Hero = React.lazy(() => import('./components/Hero'));
@@ -146,6 +149,17 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative" onClick={handleScreenClick}>
+      {/* Performance Optimizer */}
+      <PerformanceOptimizer />
+      
+      {/* SEO Component for Home Page */}
+      <SEO 
+        title="Home"
+        description="Welcome to Mariya's portfolio - Full Stack Developer and Software Engineer. Explore my projects, skills, and professional experience in web development."
+        keywords="portfolio, full stack developer, software engineer, web developer, mariya"
+        section="home"
+      />
+      
       {/* Static night sky background */}
       <div className="fixed inset-0 pointer-events-none z-10">
         {/* Background gradient */}
@@ -293,11 +307,13 @@ const AppContent = () => {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <AppContent />
-      </ThemeProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <AppContent />
+        </ThemeProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 }
 

@@ -23,6 +23,7 @@ import {
   Landmark
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import SEO from './SEO';
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -172,7 +173,15 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative py-20 overflow-hidden">
-      {/* Background - Removed to show stars through */}
+      {/* SEO for Projects Section */}
+      <SEO 
+        title="Portfolio Projects"
+        description="Explore my diverse portfolio of projects including AI/ML applications, web development, mobile apps, and innovative solutions. Each project showcases my technical expertise and problem-solving abilities."
+        keywords="portfolio projects, AI projects, machine learning, web development, mobile apps, deep learning, computer vision, NLP, blockchain"
+        section="projects"
+      />
+      
+      {/* Background Elements */}
       {/* <motion.div
         className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
         style={{ y }}

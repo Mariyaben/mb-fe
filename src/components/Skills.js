@@ -43,6 +43,7 @@ import {
   SiTron, SiVeChain, SiIota, SiNano, SiMonero, SiZcash, SiDash, SiRipple,
   SiStellar, SiAlgorand, SiCosmos, SiTezos, SiFilecoin, SiArweave, SiIpfs
 } from 'react-icons/si';
+import SEO from './SEO';
 
 // Floating Particle Component
 const FloatingParticle = ({ delay, duration, x, y }) => (
@@ -460,6 +461,14 @@ const Skills = () => {
 
   return (
     <section id="skills" className="relative py-20 overflow-hidden">
+      {/* SEO for Skills Section */}
+      <SEO 
+        title="Skills & Technologies"
+        description="Explore my technical skills including programming languages, frameworks, tools, and technologies. From frontend development to AI and blockchain expertise."
+        keywords="programming skills, technical skills, programming languages, frameworks, tools, frontend, backend, AI, blockchain, web development"
+        section="skills"
+      />
+      
       {/* Background with Floating Particles */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
