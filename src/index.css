@@ -158,15 +158,6 @@ body {
   scrollbar-color: #9ca3af #1e293b;
 }
 
-/* Loading animation - Static only */
-.loading-dots {
-  display: inline-block;
-}
-
-.loading-dots::after {
-  content: '';
-  /* Removed animation to prevent motion */
-}
 
 /* Glass morphism effect */
 .glass {

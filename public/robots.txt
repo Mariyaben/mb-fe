@@ -1,6 +1,20 @@
+# Mariya Benny Portfolio - Robots.txt
 # https://www.robotstxt.org/robotstxt.html
+
+# Allow all search engines to crawl everything
 User-agent: *
 Allow: /
+
+# Explicitly allow all important directories and files
+Allow: /about
+Allow: /skills
+Allow: /projects
+Allow: /experience
+Allow: /contact
+Allow: /images/
+Allow: /assets/
+Allow: /css/
+Allow: /js/
 
 # Sitemap location
 Sitemap: https://www.mariyabenny.com/sitemap.xml
@@ -8,28 +22,30 @@ Sitemap: https://www.mariyabenny.com/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Disallow admin or private areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
-
-# Allow all major search engines
+# Allow all major search engines explicitly
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1
 
 User-agent: DuckDuckBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Baiduspider
 Allow: /
+Crawl-delay: 1
 
 User-agent: YandexBot
 Allow: /
+Crawl-delay: 1
 
 # Block AI training bots (optional)
 User-agent: GPTBot
@@ -43,3 +59,19 @@ Disallow: /
 
 User-agent: anthropic-ai
 Disallow: /
+
+# Additional search engine support
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 2
+
+# Ensure no accidental blocking
+Disallow:

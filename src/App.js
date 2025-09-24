@@ -17,7 +17,6 @@ const Experience = React.lazy(() => import('./components/Experience'));
 const Contact = React.lazy(() => import('./components/Contact'));
 const Navbar = React.lazy(() => import('./components/Navbar'));
 const Footer = React.lazy(() => import('./components/Footer'));
-const LoadingScreen = React.lazy(() => import('./components/LoadingScreen'));
 // Removed ParticleBackground import
 
 // Create a query client for data fetching
@@ -31,7 +30,6 @@ const queryClient = new QueryClient({
 });
 
 const AppContent = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState('home');
   const [shootingStars, setShootingStars] = useState([]);
   const { isDark } = useTheme();
@@ -116,13 +114,6 @@ const AppContent = () => {
     }, newShootingStar.duration + 1000);
   };
 
-  // Simulate loading
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000); // Reduced from 3000 to 1000ms
-    return () => clearTimeout(timer);
-  }, []);
 
   // Track current section for navigation
   useEffect(() => {
@@ -143,9 +134,6 @@ const AppContent = () => {
     return () => observer.disconnect();
   }, []);
 
-  if (isLoading) {
-    return <LoadingScreen />;
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative" onClick={handleScreenClick}>

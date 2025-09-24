@@ -2,8 +2,8 @@
 export const seoConfig = {
   // Site-wide defaults
   site: {
-    name: "Mariya Portfolio",
-    title: "Mariya - Full Stack Developer & Software Engineer",
+    name: "Mariya Benny Portfolio",
+    title: "Mariya Benny - Full Stack Developer & Software Engineer",
     description: "Professional portfolio of Mariya, a skilled Full Stack Developer and Software Engineer specializing in React, Node.js, and modern web technologies.",
     url: "https://www.mariyabenny.com",
     image: "/MB.png",
@@ -69,7 +69,7 @@ export const seoConfig = {
     person: {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Mariya",
+      "name": "Mariya Benny",
       "jobTitle": "Full Stack Developer",
       "description": "Professional Full Stack Developer and Software Engineer",
       "url": "https://www.mariyabenny.com/",
@@ -90,7 +90,7 @@ export const seoConfig = {
     website: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Mariya Portfolio",
+      "name": "Mariya Benny Portfolio",
       "url": "https://www.mariyabenny.com/",
       "description": "Professional portfolio showcasing web development projects and skills",
       "author": {

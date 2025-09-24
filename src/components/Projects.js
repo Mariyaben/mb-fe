@@ -63,7 +63,7 @@ const Projects = () => {
       technologies: ["RAG", "NLP", "Fine-tuning", "Conversational AI"],
       icon: BookOpen,
       github: "https://github.com/Mariyaben/AI-Sherlock-Holmes",
-      demo: "#"
+      demo: "https://ai-sherlock-holmes.vercel.app/"
     },
     {
       id: 3,

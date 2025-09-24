@@ -10,7 +10,7 @@ const SEO = ({
   type = 'website',
   section = null 
 }) => {
-  const siteTitle = 'Mariya - Full Stack Developer & Software Engineer';
+  const siteTitle = 'Mariya Benny - Full Stack Developer & Software Engineer';
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultDescription = 'Professional portfolio of Mariya, a skilled Full Stack Developer and Software Engineer specializing in React, Node.js, and modern web technologies.';
   const defaultImage = '/MB.png';
@@ -26,7 +26,7 @@ const SEO = ({
       "url": url || defaultUrl,
       "author": {
         "@type": "Person",
-        "name": "Mariya",
+        "name": "Mariya Benny",
         "jobTitle": "Full Stack Developer"
       }
     };

@@ -89,7 +89,7 @@ const Hero = () => {
                isDark ? 'border-primary-500/30' : 'border-primary-200/50'
              } shadow-2xl`}>
               <motion.img
-                src="/machukuttan.jpg"
+                src="/mariyaa.jpg"
                 alt="Mariya"
                 className="w-full h-full object-cover"
                 whileHover={{ scale: 1.05 }}
