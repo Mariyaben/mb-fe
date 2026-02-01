@@ -517,7 +517,7 @@ const About = () => {
           >
             As a 9th semester MSc student specializing in AI and Data Science at CUSAT, 
             I blend academic excellence with innovation. Currently an exchange student at ENSSAT, France, 
-            I'm passionate about solving real-world challenges through technology.
+            I'm passionate about solving real-world challenges through technology. I co-founded <a href="https://www.evyra.in" target="_blank" rel="noopener noreferrer" className="underline text-primary-500">Evyra</a>, where I lead product and technology.
           </motion.p>
         </motion.div>
 

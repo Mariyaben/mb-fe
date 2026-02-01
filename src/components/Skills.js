@@ -269,10 +269,7 @@ const SkillCategoryCard = ({ category, categoryIndex, isHovered, onHover, inView
           <motion.button
             className="relative z-20 mt-4 w-full py-3 px-4 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-500/30 rounded-lg text-primary-400 hover:from-primary-500/30 hover:to-secondary-500/30 hover:border-primary-500/50 transition-all duration-300 font-medium cursor-pointer select-none"
             onClick={(e) => {
-              e.preventDefault();
               e.stopPropagation();
-              alert(`Button clicked for category: ${category.id}`);
-              console.log('Button clicked for category:', category.id);
               toggleCategoryExpansion(category.id);
             }}
             onMouseDown={(e) => e.preventDefault()}
@@ -299,7 +296,7 @@ const SkillCategoryCard = ({ category, categoryIndex, isHovered, onHover, inView
 
         {/* Hover Effect Overlay */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 rounded-2xl opacity-0"
+          className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 rounded-2xl opacity-0 pointer-events-none"
           animate={{ opacity: isHovered === category.id ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         />
@@ -322,16 +319,10 @@ const Skills = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   const toggleCategoryExpansion = (categoryId) => {
-    console.log('toggleCategoryExpansion called for:', categoryId);
-    console.log('Current expandedCategories:', expandedCategories);
-    setExpandedCategories(prev => {
-      const newState = {
-        ...prev,
-        [categoryId]: !prev[categoryId]
-      };
-      console.log('New expandedCategories state:', newState);
-      return newState;
-    });
+    setExpandedCategories(prev => ({
+      ...prev,
+      [categoryId]: !prev[categoryId]
+    }));
   };
 
 

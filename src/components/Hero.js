@@ -30,7 +30,7 @@ const Hero = () => {
     'AI & Data Science Specialist',
     'International Exchange Student',
     'Charpak Excellence Scholar',
-    'Aspiring Startup Founder',
+    'Founder',
     'Full-Stack Developer',
     'Machine Learning Engineer'
   ];
@@ -55,7 +55,7 @@ const Hero = () => {
       <SEO 
         title="Hero"
         description="Mariya - AI & Data Science Specialist, International Exchange Student, Charpak Excellence Scholar, and Full-Stack Developer. Discover my journey and expertise."
-        keywords="AI specialist, data science, international student, charpak scholar, full stack developer, machine learning engineer"
+        keywords="AI specialist, data science, international student, charpak scholar, full stack developer, machine learning engineer, evyra, evyra.in"
         section="hero"
       />
       
@@ -85,32 +85,47 @@ const Hero = () => {
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.1, duration: 1.2 }}
           >
-            <div className={`relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 ${
-               isDark ? 'border-primary-500/30' : 'border-primary-200/50'
-             } shadow-2xl`}>
-              <motion.img
-                src="/mariyaa.jpg"
-                alt="Mariya"
-                className="w-full h-full object-cover"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6 }}
-              />
-              {/* Removed colored glow effect overlay */}
+            <div
+              className={`relative inline-block rounded-2xl p-2 shadow-2xl ${
+                isDark ? 'bg-gradient-to-br from-primary-900/40 via-primary-800/20 to-transparent' : 'bg-gradient-to-br from-white/10 via-white/5 to-transparent'
+              }`}
+            >
+              {/* inner panel to keep image uncropped while giving border space */}
+              <div className="bg-transparent rounded-xl">
+                <motion.img
+                  src="/Screenshot_20260201_215743_Photos(1).jpg"
+                  alt="Mariya"
+                  className="block max-w-48 w-full h-auto object-contain"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.6 }}
+                  style={{ objectPosition: 'center center' }}
+                />
+              </div>
+
+              {/* Stylized rounded border overlay */}
+              <div className="absolute inset-0 pointer-events-none rounded-2xl">
+                <div
+                  className={`w-full h-full rounded-2xl pointer-events-none ${
+                    isDark
+                      ? 'ring-2 ring-primary-500/40 bg-black/10'
+                      : 'ring-2 ring-white/10 bg-white/5'
+                  }`}
+                  style={{ boxShadow: '0 8px 20px rgba(2,6,23,0.55), inset 0 1px 0 rgba(255,255,255,0.02)' }}
+                />
+              </div>
             </div>
           </motion.div>
 
           {/* Name */}
           <motion.h1
-            className="text-5xl lg:text-7xl font-bold mb-6"
+            className="text-4xl lg:text-6xl font-light mb-6 tracking-tight leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4, duration: 1.0 }} // Added duration for smoother animation
+            transition={{ delay: 0.4, duration: 1.0 }}
           >
-                         <span className={`bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent ${
-               isDark ? 'drop-shadow-glow' : ''
-             }`}>
-               Mariya Benny
-             </span>
+            <span className="text-white">
+              Mariya Benny
+            </span>
           </motion.h1>
 
           {/* Dynamic Role Text */}
@@ -150,8 +165,9 @@ const Hero = () => {
              animate={inView ? { opacity: 1, y: 0 } : {}}
              transition={{ delay: 0.8, duration: 1.2 }} // Increased from default to 1.2s
            >
-             As a 9th semester MSc student specializing in AI and Data Science at CUSAT, I blend academic excellence with innovation. 
-             Currently an exchange student at ENSSAT, France, I'm passionate about solving real-world challenges through technology. 
+            As a 9th semester MSc student specializing in AI and Data Science at CUSAT, I blend academic excellence with innovation. 
+            Currently an exchange student at ENSSAT, France, I'm passionate about solving real-world challenges through technology. 
+            Co-Founder at <a href="https://www.evyra.in" target="_blank" rel="noopener noreferrer" className="underline text-primary-500">Evyra</a>.
            </motion.p>
 
           {/* CTA Buttons */}

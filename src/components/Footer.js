@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               A passionate full-stack developer and AI enthusiast creating innovative digital experiences 
-              that combine cutting-edge technologies with beautiful design.
+              that combine cutting-edge technologies with beautiful design. Co-Founder at <a href="https://www.evyra.in" target="_blank" rel="noopener noreferrer" className="underline text-primary-400">Evyra</a>.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
