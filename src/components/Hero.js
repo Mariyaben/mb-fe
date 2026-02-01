@@ -165,8 +165,8 @@ const Hero = () => {
              animate={inView ? { opacity: 1, y: 0 } : {}}
              transition={{ delay: 0.8, duration: 1.2 }} // Increased from default to 1.2s
            >
-            As a 9th semester MSc student specializing in AI and Data Science at CUSAT, I blend academic excellence with innovation. 
-            Currently an exchange student at ENSSAT, France, I'm passionate about solving real-world challenges through technology. 
+            I'm a 10th semester MSc student specializing in AI and Data Science at CUSAT. 
+            Currently an exchange student at ENSSAT, France. 
             Co-Founder at <a href="https://www.evyra.in" target="_blank" rel="noopener noreferrer" className="underline text-primary-500">Evyra</a>.
            </motion.p>
 
