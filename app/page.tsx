@@ -180,6 +180,43 @@ function Label({ children }: { children: string }) {
   )
 }
 
+// ─── Pink paint splash ────────────────────────────────────
+
+function PinkSplash({ gradId = 'splashGrad', showDroplets = true }: { gradId?: string; showDroplets?: boolean }) {
+  return (
+    <>
+      <svg
+        className="absolute inset-0 w-full h-full"
+        viewBox="95 30 415 425"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#FBB8DD" />
+            <stop offset="100%" stopColor="#F18BC4" />
+          </linearGradient>
+        </defs>
+        <path
+          fill={`url(#${gradId})`}
+          d="M471.8 211.3 Q505 240 476.4 270.6 Q447.8 301.2 457 353.7 Q466.2 406.2 411.8 392.4 Q357.4 378.6 328.7 414.3 Q300 450 268.45 421.2 Q236.9 392.4 183.6 401.05 Q130.3 409.7 145.85 353.55 Q161.4 297.4 130.7 268.7 Q100 240 126.1 209.4 Q152.2 178.8 146.55 129.85 Q140.9 80.9 191.75 91.15 Q242.6 101.4 271.3 68.2 Q300 35 330.6 63.6 Q361.2 92.2 417.2 79.5 Q473.2 66.8 455.9 124.7 Q438.6 182.6 471.8 211.3 Z"
+        />
+      </svg>
+      {/* flung droplets */}
+      {showDroplets && (
+        <>
+          <span className="absolute" style={{ top: '-7%', right: '8%', width: 34, height: 30, background: '#F49ACB', borderRadius: '60% 40% 55% 45%' }} />
+          <span className="absolute" style={{ top: '36%', right: '-5%', width: 18, height: 18, background: '#F49ACB', borderRadius: '50%' }} />
+          <span className="absolute" style={{ bottom: '12%', right: '14%', width: 11, height: 11, background: '#F49ACB', borderRadius: '50%' }} />
+          <span className="absolute" style={{ bottom: '-8%', left: '16%', width: 40, height: 34, background: '#F49ACB', borderRadius: '55% 45% 50% 50%' }} />
+          <span className="absolute" style={{ top: '58%', left: '-5%', width: 22, height: 22, background: '#F49ACB', borderRadius: '50%' }} />
+          <span className="absolute" style={{ top: '4%', left: '26%', width: 13, height: 13, background: '#F49ACB', borderRadius: '50%' }} />
+        </>
+      )}
+    </>
+  )
+}
+
 // ══════════════════════════════════════════════════════════
 //  MAIN PAGE
 // ══════════════════════════════════════════════════════════
@@ -217,9 +254,9 @@ export default function Portfolio() {
                 {s === 'lejit' ? 'Lejit' : s.charAt(0).toUpperCase() + s.slice(1)}
               </a>
             ))}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-1.5 border border-stone-300 hover:border-pink-300 hover:bg-pink-50 hover:text-pink-700 transition-colors">
-              Resume ↗
-            </a>
+           <a href="https://drive.google.com/file/d/1P803HWCnDCo9oK40cf0K4YVSzLcLanwc/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-1.5 border border-stone-300 hover:border-pink-300 hover:bg-pink-50 hover:text-pink-700 transition-colors"> 
+           Resume ↗
+           </a>
           </div>
           <button className="md:hidden text-stone-600 text-lg leading-none" onClick={() => setMobileOpen(v => !v)}>
             {mobileOpen ? '✕' : '≡'}
@@ -232,48 +269,34 @@ export default function Portfolio() {
                 {s === 'lejit' ? 'Lejit' : s.charAt(0).toUpperCase() + s.slice(1)}
               </a>
             ))}
+            <a
+              href="https://drive.google.com/file/d/1P803HWCnDCo9oK40cf0K4YVSzLcLanwc/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="text-sm w-fit px-3 py-1.5 border border-stone-300 hover:border-pink-300 hover:bg-pink-50 hover:text-pink-700 transition-colors"
+            >
+              Resume ↗
+            </a>
           </div>
         )}
       </nav>
 
       {/* ── HERO ────────────────────────── */}
-      <section id="hero" className="px-6 pt-28 md:pt-36 pb-16">
+      <section id="hero" className="px-6 pt-28 md:pt-36 pb-16 overflow-x-clip">
         <div className="max-w-5xl mx-auto">
 
-          <div className="flex flex-col md:flex-row md:items-center gap-10 md:gap-14">
+          <div className="flex flex-col-reverse md:flex-row md:items-center gap-10 md:gap-14">
 
-            {/* Left — text with pink shape behind */}
+            {/* Left — text with pink shape behind (desktop only) */}
             <div className="relative md:w-[55%]">
-              {/* Pink paint splash behind text */}
+              {/* Pink paint splash behind text — desktop only */}
               <div
                 aria-hidden
-                className="absolute hidden md:block pointer-events-none"
-                style={{ top: '-3rem', bottom: '-3rem', left: '-16%', right: '4%', zIndex: 0 }}
+                className="absolute hidden md:block z-0 pointer-events-none"
+                style={{ top: '-3rem', bottom: '-3rem', left: '-16%', right: '4%' }}
               >
-                <svg
-                  className="absolute inset-0 w-full h-full"
-                  viewBox="95 30 415 425"
-                  preserveAspectRatio="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient id="splashGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#FBB8DD" />
-                      <stop offset="100%" stopColor="#F18BC4" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    fill="url(#splashGrad)"
-                    d="M471.8 211.3 Q505 240 476.4 270.6 Q447.8 301.2 457 353.7 Q466.2 406.2 411.8 392.4 Q357.4 378.6 328.7 414.3 Q300 450 268.45 421.2 Q236.9 392.4 183.6 401.05 Q130.3 409.7 145.85 353.55 Q161.4 297.4 130.7 268.7 Q100 240 126.1 209.4 Q152.2 178.8 146.55 129.85 Q140.9 80.9 191.75 91.15 Q242.6 101.4 271.3 68.2 Q300 35 330.6 63.6 Q361.2 92.2 417.2 79.5 Q473.2 66.8 455.9 124.7 Q438.6 182.6 471.8 211.3 Z"
-                  />
-                </svg>
-                {/* flung droplets */}
-                <span className="absolute" style={{ top: '-7%', right: '8%', width: 34, height: 30, background: '#F49ACB', borderRadius: '60% 40% 55% 45%' }} />
-                <span className="absolute" style={{ top: '36%', right: '-5%', width: 18, height: 18, background: '#F49ACB', borderRadius: '50%' }} />
-                <span className="absolute" style={{ bottom: '12%', right: '14%', width: 11, height: 11, background: '#F49ACB', borderRadius: '50%' }} />
-                <span className="absolute" style={{ bottom: '-8%', left: '16%', width: 40, height: 34, background: '#F49ACB', borderRadius: '55% 45% 50% 50%' }} />
-                <span className="absolute" style={{ top: '58%', left: '-5%', width: 22, height: 22, background: '#F49ACB', borderRadius: '50%' }} />
-                <span className="absolute" style={{ top: '4%', left: '26%', width: 13, height: 13, background: '#F49ACB', borderRadius: '50%' }} />
+                <PinkSplash />
               </div>
 
               <div className="relative" style={{ zIndex: 1 }}>
@@ -282,9 +305,9 @@ export default function Portfolio() {
                   Hello, my name<br />is Mariya Benny
                 </h1>
                 <p className="text-stone-700 leading-relaxed mb-9 max-w-[400px]">
-                  I build AI systems that work in production — not just demos.
+                  Building AI systems that work in production, not just demos.
                   Led a 13-member tech team at a LegalTech startup from zero to 300+ users.
-                  MSc AI &amp; Data Science, CUSAT · Charpak Scholar, France.
+                  MSc AI &amp; Data Science, CUSAT ·France Excellence Charpak Scholar 2025 - 2026.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a
@@ -305,14 +328,21 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* Right — framed photo */}
-            <div className="md:w-[45%] md:flex-shrink-0">
-              <div className="overflow-hidden rounded-[1.5rem] shadow-2xl shadow-stone-300/60">
+            {/* Right — framed photo (pink splash behind it on mobile) */}
+            <div className="relative md:w-[45%] md:flex-shrink-0">
+              {/* Pink paint splash behind photo — mobile only */}
+              <div
+                aria-hidden
+                className="absolute md:hidden z-0 pointer-events-none inset-y-[-2.5rem] inset-x-[-12%]"
+              >
+                <PinkSplash gradId="splashGradMobile" showDroplets={false} />
+              </div>
+              <div className="relative z-10 w-[230px] h-[230px] mx-auto md:w-auto md:h-auto md:max-w-none overflow-hidden rounded-full md:rounded-[1.5rem] ring-[6px] ring-white md:ring-0 shadow-xl shadow-pink-900/10 md:shadow-2xl md:shadow-stone-300/60">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/profile.jpg"
                   alt="Mariya Benny"
-                  className="w-full object-cover object-top h-[340px] sm:h-[420px] md:h-[480px]"
+                  className="w-full h-full object-cover object-top md:h-[480px]"
                 />
               </div>
             </div>
@@ -380,7 +410,7 @@ export default function Portfolio() {
       <footer className="bg-[#1a1917] border-t border-stone-800 py-6 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
           <p className="text-sm text-stone-500">© 2026 Mariya Benny</p>
-          <p className="text-xs text-stone-600">Designed & built by me · Next.js + Tailwind</p>
+          <p className="text-xs text-stone-600">Designed & built by Mariya · Next.js + Tailwind</p>
         </div>
       </footer>
     </div>
@@ -393,41 +423,80 @@ export default function Portfolio() {
 
 const CHAPTERS = [
   {
+    id: 'lejit',
+    period: 'Aug 2024 – Aug 2025',
+    tag: 'Startup Leadership',
+    title: 'Lejit AI — Architecting a LegalTech Platform from Zero',
+    body: `Taking ownership of a blank canvas at the start of the final academic year, scaled and led a 13-member cross-functional engineering team through full Agile/Scrum lifecycles. Architected the core multi-agent AI ecosystems, production RAG pipelines, and AWS/CI-CD infrastructure. Beyond the code, translated this technical work into real-world impact—winning the Dreamvestor 2025 championship and presenting deployment strategies directly to senior state lawyers and the Chief Registrar at the High Court of Kerala.`,
+    aside: [
+      'Led 13 engineers from initial MVP design to a live production release with 300+ active users.',
+      'Engineered multi-agent orchestration, tool use, and context management across Indian legal corpora.',
+      'Won Dreamvestor 2025 (Kerala Startup Mission) out of 400+ contenders, securing a Rs. 1 Lakh cash prize.',
+      'Conducted field research and presented deployment strategies to the Chief Registrar & Kerala IT Cell.'
+    ],
+   
+    cta: { label: 'Read the full Lejit story', href: '#lejit' },
+  },
+  {
     id: 'cusat',
     period: '2021 – 2026',
-    tag: 'University',
+    tag: 'University & Leadership',
     title: 'MSc AI & Data Science, CUSAT',
-    body: `CUSAT's 5-year integrated MSc in Computer Science (AI & Data Science) is where everything clicked. I finished top 1% of my cohort — CGPA 9.14/10. But the real education was outside lectures: hackathons, club leadership, building things that didn't exist before.`,
-    aside: `Vice Chair, IEEE Women in Engineering · Operations Hosting Lead, IEDC CUSAT · MC at TEDx CUSAT 2024 · Organizer, Make-A-Ton 7.0 · Community Volunteer, AnitaB.org. I said yes to most things. I still do.`,
+    body: `Graduating in the top 1% of the cohort with a 9.14/10 CGPA anchored a strong technical foundation, but the defining university chapters happened completely outside the classroom. Dove headfirst into driving CUSAT\'s campus tech ecosystem—guiding young engineers as Vice Chair of IEEE Women in Engineering, orchestrating massive operational logistics as the Hosting Lead for IEDC, and organizing Make-A-Ton 7.0, one of Kerala\'s premier national hackathons. Whether designing scalable code or anchoring the stage as the official MC for TEDx CUSAT 2024, treated campus leadership as a core engineering discipline.`,
+    aside: [
+      'Organizer for Make-A-Ton 7.0, driving logistics, coordination, and execution for the national hackathon.',
+      'Official Master of Ceremonies for TEDx CUSAT 2024, managing the main stage and live event flow.',
+      'Vice Chair of IEEE Women in Engineering, spearheading technical workshops and community mentorship.',
+      'Operations Hosting Lead for IEDC CUSAT, managing campus innovation and startup incubation initiatives.',
+      'University 1st Prize Winner in English Short Story Writing (2024) and English Poem Writing (2022).'
+    ],
+   
+    cta: null,
+  },
+  {
+    id: 'france',
+    period: 'Sept 2025 – Feb 2026',
+    tag: 'International Exchange',
+    title: 'Charpak Scholar, ENSSAT Rennes (France)',
+    body: `Awarded the prestigious France Excellence Charpak Scholarship by the French Government for academic and technical merit. Spent an exchange semester pursuing advanced graduate-level computer science coursework at ENSSAT, University of Rennes, finishing with a 9.29/10 CGPA. Living, studying, and collaborating completely in a new international environment was an invaluable, clarifying chapter that sharpened a global perspective and independent adaptability.`,
+    aside: [
+      'Selected for the highly competitive, merit-based France Excellence Charpak Scholarship.',
+      'Achieved a 9.29/10 CGPA in advanced European AI and computer science modules.',
+      'Navigated complex international academic environments and cross-cultural engineering workflows.'
+    ],
+   
     cta: null,
   },
   {
     id: 'firstwork',
     period: '2023 – 2024',
-    tag: 'First real work',
-    title: 'Internships, research, and a streak of wins',
-    body: `Summer 2023 I was at KPIT Technologies, Kochi — my first industry role. Then 2024 became a streak: IBM collaboration (built LegalGPT, presented at the IBM International GenAI Conclave, Kochi), research at NIT Surathkal on hyperspectral anomaly detection using diffusion models, and a run of hackathon finals.`,
-    aside: `IIT Delhi Fin-A-Thon: Top 15 nationally from 600+ teams · HackAthena '24: Theme Prize Winner, Rs. 10,000 · Tink-Her-Hack 2.0: Top 100 from 1,000+ in Kerala · IBM GenAI Conclave: Presented LegalGPT on WatsonX`,
+    tag: 'Early Career & Research',
+    title: 'Research Internships and a Streak of Wins',
+    body: `A hyper-focused period balancing industry software engineering with deep learning research. Accelerated from an early industry role at KPIT to a collaborative internship with IBM—shipping LegalGPT on WatsonX and presenting it live at the IBM International GenAI Conclave. Concurrently, contributed to generative AI research at NIT Surathkal, building custom PyTorch diffusion restoration frameworks for hyperspectral anomaly detection, while maintaining a high-performance streak at national hackathons.`,
+    aside: [
+      'Presented LegalGPT live on stage at the IBM International GenAI Conclave in Kochi.',
+      'Applied ML Research Intern at NIT Surathkal, developing custom image-conditioned diffusion models.',
+      'IIT Delhi Fin-A-Thon: Placed as a Top 15 National Finalist out of more than 600 competing teams.',
+      'HackAthena \'24: Earned the Theme Prize for Road Safety alongside a Rs. 10,000 cash award.',
+      'AnitaB.org Community Volunteer, actively supporting inclusion and diversity initiatives in tech.'
+    ],
+   
     cta: null,
   },
   {
-    id: 'lejit',
+    id: 'geojit',
     period: 'Aug 2024 – Aug 2025',
-    tag: 'The main chapter',
-    title: 'Lejit — where I stopped being a student who codes',
-    body: `I joined Lejit as Project Manager and Tech Team Lead at the start of my final year. No team, no codebase, no users. Twelve months later: a 13-member engineering team, 300+ active users in our first month of launch, a Dreamvestor Top 10 win, and a system I'd architected from scratch handling real legal workflows for real lawyers in Kerala.`,
-    aside: null,
-    cta: { label: 'Read the full Lejit story', href: '#lejit' },
-  },
-  {
-    id: 'france',
-    period: 'Sept 2025 – Feb 2026',
-    tag: 'Exchange year',
-    title: 'France Excellence Charpak Scholar, ENSSAT Rennes',
-    body: `Selected by the French Government for the France Excellence Charpak Scholarship — one of the most competitive bilateral academic exchanges for Indian students. Studied at ENSSAT, University of Rennes. Finished with 9.29/10. First time living alone in another country. Hard, clarifying, and exactly what I needed.`,
-    aside: null,
+    tag: 'Industry Experience',
+    title: 'AI Developer Intern, Geojit Technologies',
+    body: `Parallel to leading the tech team at Lejit AI, stepped into the financial services domain at Geojit Technologies to develop secure, enterprise AI systems. Focused on bridging advanced machine learning models with production infrastructure, dealing directly with strict data isolation, environment management, and financial security protocols. This chapter proved a capacity to manage high-velocity corporate development pipelines alongside startup growth and intensive university leadership commitments.`,
+    aside: [
+      'Engineered domain-specific AI models and automated backend workflows for financial tech services.',
+      'Gained deep experience in secrets management, environment isolation, and network hardening.',
+      'Successfully balanced enterprise engineering timelines alongside final-year tracks and startup deployment.'
+    ],
+   
     cta: null,
-  },
+  }
 ]
 
 function playPageTurn() {
@@ -471,22 +540,10 @@ const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI']
 
 // Each leaf must forward its ref so react-pageflip can attach to it
 type LeafProps =
-  | { kind: 'back' }
   | { kind: 'divider'; chapter: typeof CHAPTERS[number]; index: number; folio: number }
   | { kind: 'content'; chapter: typeof CHAPTERS[number]; folio: number }
 
 const BookLeaf = React.forwardRef<HTMLDivElement, LeafProps>((props, ref) => {
-  if (props.kind === 'back') {
-    return (
-      <div ref={ref} data-density="hard" className="book-cover">
-        <div className="text-center px-8">
-          <p className="text-[1.9rem] font-bold tracking-tight leading-snug mb-5">To be<br />continued.</p>
-          <div className="mx-auto book-rule mb-6" />
-          <p className="text-[12.5px] text-stone-400">MSc complete.<br />Open to what&apos;s next.</p>
-        </div>
-      </div>
-    )
-  }
   if (props.kind === 'divider') {
     const { chapter, index, folio } = props
     return (
@@ -511,10 +568,14 @@ const BookLeaf = React.forwardRef<HTMLDivElement, LeafProps>((props, ref) => {
           <span className="font-mono text-[10px] text-stone-400">{chapter.period}</span>
         </div>
         <p className="book-dropcap text-[13.5px] leading-[1.75] text-stone-700">{chapter.body}</p>
-        {chapter.aside && (
-          <p className="mt-5 text-[12px] leading-relaxed text-stone-500 border-l-2 border-pink-300 pl-3.5">
-            {chapter.aside}
-          </p>
+        {chapter.aside && chapter.aside.length > 0 && (
+          <ul className="mt-5 space-y-1.5 text-[12px] leading-relaxed text-stone-500 border-l-2 border-pink-300 pl-3.5">
+            {chapter.aside.map((line, i) => (
+              <li key={i} className="relative pl-3.5 before:absolute before:left-0 before:text-pink-400 before:content-['▸']">
+                {line}
+              </li>
+            ))}
+          </ul>
         )}
         {chapter.cta && (
           <a
@@ -540,7 +601,6 @@ function StorySection() {
       <BookLeaf key={`${ch.id}-d`} kind="divider" chapter={ch} index={i} folio={2 * i + 1} />,
       <BookLeaf key={`${ch.id}-c`} kind="content" chapter={ch} folio={2 * i + 2} />,
     ]),
-    <BookLeaf key="back" kind="back" />,
   ]
   const LAST = leaves.length - 1
 
@@ -562,12 +622,9 @@ function StorySection() {
     return () => window.removeEventListener('keydown', onKey)
   }, [flipNext, flipPrev])
 
-  const activeChapter =
-    currentPage >= LAST ? CHAPTERS.length : Math.floor(currentPage / 2)
+  const activeChapter = Math.min(Math.floor(currentPage / 2), CHAPTERS.length - 1)
 
-  const counter =
-    activeChapter >= CHAPTERS.length ? 'The End'
-      : `Ch. ${String(activeChapter + 1).padStart(2, '0')} / ${String(CHAPTERS.length).padStart(2, '0')}`
+  const counter = `Ch. ${String(activeChapter + 1).padStart(2, '0')} / ${String(CHAPTERS.length).padStart(2, '0')}`
 
   return (
     <FadeIn className="max-w-5xl mx-auto px-6">
@@ -630,7 +687,7 @@ function StorySection() {
             usePortrait={true}
             startPage={0}
             autoSize={true}
-            mobileScrollSupport={false}
+            mobileScrollSupport={true}
             onFlip={handleFlip}
             showPageCorners={true}
             disableFlipByClick={false}
@@ -678,32 +735,32 @@ const LEJIT_PHASES = [
   {
     num: '01',
     title: 'Built from nothing',
-    desc: 'Joined as the first engineering hire. No codebase, no team, no users. Designed the full architecture: Django backend, React/Next.js frontend, PostgreSQL with pgvector, AWS infrastructure.',
+    desc: 'Joined at the founding stage — no codebase, no users, everything still to define. Led the engineering direction and designed the core workflows and system architecture (Django backend, React/Next.js frontend, PostgreSQL with pgvector, AWS) that the team built on.',
   },
   {
     num: '02',
     title: '300+ users in month one',
-    desc: 'Led a 13-member cross-functional team through scrums, standups, 1:1s, sprint planning, and production releases — all while attending final year of university.',
+    desc: 'Led a 13-member cross-functional team through scrums, standups, 1:1s, sprint planning, and production releases — all during the final year of university. The 300+ users reached in month one were earned by every engineer on that team.',
   },
   {
     num: '03',
     title: 'Agentic AI in production',
-    desc: 'Designed and shipped multi-step AI pipelines for conversational legal assistance, autonomous document drafting, and case research using planner/sub-agent patterns under real production load.',
+    desc: 'Designed the multi-step AI pipelines — conversational legal assistance, autonomous document drafting, and case research with planner/sub-agent patterns — which the team then built and hardened for real production load.',
   },
   {
     num: '04',
     title: 'RAG over Indian legal corpora',
-    desc: 'Production RAG over BNS and lower-court petitions: vector DB design, embedding-based retrieval, chunking, reranking, context compression, and citation integrity across legal documents.',
+    desc: 'Architected the production RAG over BNS and lower-court petitions: vector DB design, embedding-based retrieval, chunking, reranking, context compression, and citation integrity — implemented and refined together with the team.',
   },
   {
     num: '05',
     title: 'Quality as an engineering problem',
-    desc: 'Instrumented prompt pipelines, A/B tested retrieval and prompting changes, tracked hallucination and failure rates, iterated on eval harnesses continuously.',
+    desc: 'Set quality as a first-class discipline: instrumented prompt pipelines, A/B tested retrieval and prompting changes, tracked hallucination and failure rates, and drove continuous iteration on eval harnesses with the team.',
   },
   {
     num: '06',
     title: 'Courts, lawyers, and a ₹1L prize',
-    desc: 'Conducted user research at the High Court of Kerala. Presented to the Chief Registrar and Kerala IT Cell. Ran a session on AI in the Legal Sector at Vanchiyoor Court attended by senior state lawyers. Won Dreamvestor 2025 from 400+ contenders.',
+    desc: 'Led user research at the High Court of Kerala and presented to the Chief Registrar and Kerala IT Cell, plus a session on AI in the Legal Sector at Vanchiyoor Court for senior state lawyers. Together, the team won Dreamvestor 2025 from 400+ contenders.',
   },
 ]
 
@@ -724,9 +781,9 @@ function LejitSection() {
           </div>
           <div className="md:col-span-7 md:pt-1">
             <p className="text-lg md:text-xl text-stone-700 leading-relaxed border-l-2 border-pink-400 pl-5">
-              I came in as Project Manager and Tech Lead — which, in startup terms, meant I architected
-              the system, led a 13-person team, shipped to production, and sat across from lawyers at the
-              High Court of Kerala, often in the same week.
+              Came in as Project Manager and Tech Lead — which, in startup terms, meant architecting
+              the system, leading a 13-person team, shipping to production, and sitting across from lawyers
+              at the High Court of Kerala, often in the same week.
             </p>
             <p className="mt-5 text-base text-stone-500 leading-relaxed pl-5">
               Zero to 300+ users in the first month — an empty repo turned into something real lawyers
@@ -768,9 +825,9 @@ function LejitSection() {
         </div>
       </FadeIn>
 
-      {/* What I built grid */}
+      {/* What we built grid */}
       <FadeIn>
-        <h3 className="text-[11px] font-semibold tracking-[0.15em] uppercase text-stone-400 mb-6">What I built</h3>
+        <h3 className="text-[11px] font-semibold tracking-[0.15em] uppercase text-stone-400 mb-6">What we built</h3>
         <div className="border border-stone-200 divide-y divide-stone-200 mb-12">
           {Array.from({ length: Math.ceil(LEJIT_PHASES.length / 2) }, (_, row) => (
             <div key={row} className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200">
@@ -1138,8 +1195,8 @@ function ContactSection() {
             <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-pink-400 mb-3">Say hello</p>
             <h2 className="text-3xl lg:text-5xl font-bold mb-5 leading-tight">Let&apos;s build<br />something real.</h2>
             <p className="text-stone-400 leading-relaxed mb-10 max-w-lg">
-              I&apos;m open to full-time roles in AI engineering, full-stack development, or anything at
-              the intersection. If you&apos;re building something meaningful, I&apos;d love to hear about it.
+              Open to full-time roles in AI engineering, full-stack development, or anything at
+              the intersection. If you&apos;re building something meaningful, let&apos;s talk.
             </p>
             <a
               href="mailto:mariyaben02@gmail.com"
