@@ -305,9 +305,9 @@ export default function Portfolio() {
                   Hello, my name<br />is Mariya Benny
                 </h1>
                 <p className="text-stone-700 leading-relaxed mb-9 max-w-[400px]">
-                  Building AI systems that work in production, not just demos.
+                  Building AI systems that hold up in production.
                   Led a 13-member tech team at a LegalTech startup from zero to 300+ users.
-                  MSc AI &amp; Data Science, CUSAT ·France Excellence Charpak Scholar 2025 - 2026.
+                  MSc AI &amp; Data Science, CUSAT · France Excellence Charpak Scholar 2025 to 2026.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a
@@ -328,15 +328,8 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* Right — framed photo (pink splash behind it on mobile) */}
+            {/* Right — framed photo */}
             <div className="relative md:w-[45%] md:flex-shrink-0">
-              {/* Pink paint splash behind photo — mobile only */}
-              <div
-                aria-hidden
-                className="absolute md:hidden z-0 pointer-events-none inset-y-[-2.5rem] inset-x-[-12%]"
-              >
-                <PinkSplash gradId="splashGradMobile" showDroplets={false} />
-              </div>
               <div className="relative z-10 w-[230px] h-[230px] mx-auto md:w-auto md:h-auto md:max-w-none overflow-hidden rounded-full md:rounded-[1.5rem] ring-[6px] ring-white md:ring-0 shadow-xl shadow-pink-900/10 md:shadow-2xl md:shadow-stone-300/60">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -346,23 +339,6 @@ export default function Portfolio() {
                 />
               </div>
             </div>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-stone-200">
-            {([
-              { v: 300, s: '+', label: 'Active users, month 1', animated: true },
-              { v: 13, s: '', label: 'Member team led at Lejit', animated: true },
-              { v: '9.14', s: '/10', label: 'CGPA at CUSAT (top 1%)', animated: false },
-              { v: 5, s: '+', label: 'Industry roles & research', animated: true },
-            ] as const).map(({ v, s, label, animated }) => (
-              <div key={label} className="border-l-2 border-pink-400 pl-4">
-                <div className="text-3xl font-bold text-[#1a1917] tabular-nums">
-                  {animated ? <AnimatedNumber value={v as number} suffix={s} /> : <>{v}{s}</>}
-                </div>
-                <div className="text-xs text-stone-500 mt-1 leading-tight">{label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -424,10 +400,10 @@ export default function Portfolio() {
 const CHAPTERS = [
   {
     id: 'lejit',
-    period: 'Aug 2024 – Aug 2025',
+    period: 'Aug 2024 to Aug 2025',
     tag: 'Startup Leadership',
-    title: 'Lejit AI — Architecting a LegalTech Platform from Zero',
-    body: `Taking ownership of a blank canvas at the start of the final academic year, scaled and led a 13-member cross-functional engineering team through full Agile/Scrum lifecycles. Architected the core multi-agent AI ecosystems, production RAG pipelines, and AWS/CI-CD infrastructure. Beyond the code, translated this technical work into real-world impact—winning the Dreamvestor 2025 championship and presenting deployment strategies directly to senior state lawyers and the Chief Registrar at the High Court of Kerala.`,
+    title: 'Lejit AI: Building a LegalTech Platform from the Ground Up',
+    body: `Starting from an empty repo at the start of the final academic year, scaled and led a 13-member cross-functional engineering team through full Agile/Scrum lifecycles. Architected the core multi-agent AI systems, production RAG pipelines, and AWS/CI-CD infrastructure. Beyond the code, carried that work through to real outcomes, winning Dreamvestor 2025 and presenting deployment strategies directly to senior state lawyers and the Chief Registrar at the High Court of Kerala.`,
     aside: [
       'Led 13 engineers from initial MVP design to a live production release with 300+ active users.',
       'Engineered multi-agent orchestration, tool use, and context management across Indian legal corpora.',
@@ -439,14 +415,14 @@ const CHAPTERS = [
   },
   {
     id: 'cusat',
-    period: '2021 – 2026',
+    period: '2021 to 2026',
     tag: 'University & Leadership',
     title: 'MSc AI & Data Science, CUSAT',
-    body: `Graduating in the top 1% of the cohort with a 9.14/10 CGPA anchored a strong technical foundation, but the defining university chapters happened completely outside the classroom. Dove headfirst into driving CUSAT\'s campus tech ecosystem—guiding young engineers as Vice Chair of IEEE Women in Engineering, orchestrating massive operational logistics as the Hosting Lead for IEDC, and organizing Make-A-Ton 7.0, one of Kerala\'s premier national hackathons. Whether designing scalable code or anchoring the stage as the official MC for TEDx CUSAT 2024, treated campus leadership as a core engineering discipline.`,
+    body: `Graduating in the top 1% of the cohort with a 9.14/10 CGPA anchored a strong technical foundation, but the defining university chapters happened completely outside the classroom. Took an active role across CUSAT\'s campus tech community, guiding fellow engineers as Vice Chair of IEEE Women in Engineering, running operational logistics as the Hosting Lead for IEDC, and organizing Make-A-Ton 7.0, one of Kerala\'s largest national hackathons. Whether designing scalable code or anchoring the stage as the official MC for TEDx CUSAT 2024, put as much care into campus leadership as into the engineering.`,
     aside: [
       'Organizer for Make-A-Ton 7.0, driving logistics, coordination, and execution for the national hackathon.',
       'Official Master of Ceremonies for TEDx CUSAT 2024, managing the main stage and live event flow.',
-      'Vice Chair of IEEE Women in Engineering, spearheading technical workshops and community mentorship.',
+      'Vice Chair of IEEE Women in Engineering, leading technical workshops and community mentorship.',
       'Operations Hosting Lead for IEDC CUSAT, managing campus innovation and startup incubation initiatives.',
       'University 1st Prize Winner in English Short Story Writing (2024) and English Poem Writing (2022).'
     ],
@@ -455,24 +431,24 @@ const CHAPTERS = [
   },
   {
     id: 'france',
-    period: 'Sept 2025 – Feb 2026',
+    period: 'Sept 2025 to Feb 2026',
     tag: 'International Exchange',
     title: 'Charpak Scholar, ENSSAT Rennes (France)',
-    body: `Awarded the prestigious France Excellence Charpak Scholarship by the French Government for academic and technical merit. Spent an exchange semester pursuing advanced graduate-level computer science coursework at ENSSAT, University of Rennes, finishing with a 9.29/10 CGPA. Living, studying, and collaborating completely in a new international environment was an invaluable, clarifying chapter that sharpened a global perspective and independent adaptability.`,
+    body: `Awarded the France Excellence Charpak Scholarship by the French Government for academic and technical merit. Spent an exchange semester pursuing graduate-level computer science coursework at ENSSAT, University of Rennes, finishing with a 9.29/10 CGPA. Living, studying, and working in a new country was a clarifying chapter that built perspective and independence.`,
     aside: [
-      'Selected for the highly competitive, merit-based France Excellence Charpak Scholarship.',
+      'Selected for the competitive, merit-based France Excellence Charpak Scholarship.',
       'Achieved a 9.29/10 CGPA in advanced European AI and computer science modules.',
-      'Navigated complex international academic environments and cross-cultural engineering workflows.'
+      'Studied and collaborated across different academic and engineering cultures.'
     ],
    
     cta: null,
   },
   {
     id: 'firstwork',
-    period: '2023 – 2024',
+    period: '2023 to 2024',
     tag: 'Early Career & Research',
     title: 'Research Internships and a Streak of Wins',
-    body: `A hyper-focused period balancing industry software engineering with deep learning research. Accelerated from an early industry role at KPIT to a collaborative internship with IBM—shipping LegalGPT on WatsonX and presenting it live at the IBM International GenAI Conclave. Concurrently, contributed to generative AI research at NIT Surathkal, building custom PyTorch diffusion restoration frameworks for hyperspectral anomaly detection, while maintaining a high-performance streak at national hackathons.`,
+    body: `An intense period balancing industry software engineering with deep learning research. Moved from an early industry role at KPIT to a collaborative internship with IBM, shipping LegalGPT on WatsonX and presenting it live at the IBM International GenAI Conclave. Concurrently, contributed to generative AI research at NIT Surathkal, building custom PyTorch diffusion restoration frameworks for hyperspectral anomaly detection, while keeping a consistent run at national hackathons.`,
     aside: [
       'Presented LegalGPT live on stage at the IBM International GenAI Conclave in Kochi.',
       'Applied ML Research Intern at NIT Surathkal, developing custom image-conditioned diffusion models.',
@@ -485,14 +461,14 @@ const CHAPTERS = [
   },
   {
     id: 'geojit',
-    period: 'Aug 2024 – Aug 2025',
+    period: 'Aug 2024 to Aug 2025',
     tag: 'Industry Experience',
     title: 'AI Developer Intern, Geojit Technologies',
-    body: `Parallel to leading the tech team at Lejit AI, stepped into the financial services domain at Geojit Technologies to develop secure, enterprise AI systems. Focused on bridging advanced machine learning models with production infrastructure, dealing directly with strict data isolation, environment management, and financial security protocols. This chapter proved a capacity to manage high-velocity corporate development pipelines alongside startup growth and intensive university leadership commitments.`,
+    body: `Parallel to leading the tech team at Lejit AI, stepped into the financial services domain at Geojit Technologies to develop secure, enterprise AI systems. Focused on bridging machine learning models with production infrastructure, dealing directly with strict data isolation, environment management, and financial security protocols. Balanced fast-moving corporate development alongside startup growth and university leadership.`,
     aside: [
       'Engineered domain-specific AI models and automated backend workflows for financial tech services.',
-      'Gained deep experience in secrets management, environment isolation, and network hardening.',
-      'Successfully balanced enterprise engineering timelines alongside final-year tracks and startup deployment.'
+      'Worked hands-on with secrets management, environment isolation, and network hardening.',
+      'Balanced enterprise engineering timelines alongside final-year studies and startup deployment.'
     ],
    
     cta: null,
@@ -735,27 +711,27 @@ const LEJIT_PHASES = [
   {
     num: '01',
     title: 'Built from nothing',
-    desc: 'Joined at the founding stage — no codebase, no users, everything still to define. Led the engineering direction and designed the core workflows and system architecture (Django backend, React/Next.js frontend, PostgreSQL with pgvector, AWS) that the team built on.',
+    desc: 'Joined at the founding stage with no codebase, no users, and everything still to define. Led the engineering direction and designed the core workflows and system architecture (Django backend, React/Next.js frontend, PostgreSQL with pgvector, AWS) that the team built on.',
   },
   {
     num: '02',
     title: '300+ users in month one',
-    desc: 'Led a 13-member cross-functional team through scrums, standups, 1:1s, sprint planning, and production releases — all during the final year of university. The 300+ users reached in month one were earned by every engineer on that team.',
+    desc: 'Led a 13-member cross-functional team through scrums, standups, 1:1s, sprint planning, and production releases, all during the final year of university. The 300+ users reached in month one were earned by every engineer on that team.',
   },
   {
     num: '03',
     title: 'Agentic AI in production',
-    desc: 'Designed the multi-step AI pipelines — conversational legal assistance, autonomous document drafting, and case research with planner/sub-agent patterns — which the team then built and hardened for real production load.',
+    desc: 'Designed the multi-step AI pipelines (conversational legal assistance, autonomous document drafting, and case research with planner/sub-agent patterns), which the team then built and hardened for real production load.',
   },
   {
     num: '04',
     title: 'RAG over Indian legal corpora',
-    desc: 'Architected the production RAG over BNS and lower-court petitions: vector DB design, embedding-based retrieval, chunking, reranking, context compression, and citation integrity — implemented and refined together with the team.',
+    desc: 'Architected the production RAG over BNS and lower-court petitions: vector DB design, embedding-based retrieval, chunking, reranking, context compression, and citation integrity, implemented and refined together with the team.',
   },
   {
     num: '05',
     title: 'Quality as an engineering problem',
-    desc: 'Set quality as a first-class discipline: instrumented prompt pipelines, A/B tested retrieval and prompting changes, tracked hallucination and failure rates, and drove continuous iteration on eval harnesses with the team.',
+    desc: 'Made quality a deliberate focus: instrumented prompt pipelines, A/B tested retrieval and prompting changes, tracked hallucination and failure rates, and drove continuous iteration on eval harnesses with the team.',
   },
   {
     num: '06',
@@ -770,7 +746,7 @@ function LejitSection() {
       <FadeIn>
         <div className="grid md:grid-cols-12 gap-x-10 gap-y-6 items-start mb-12">
           <div className="md:col-span-5">
-            <Label>Aug 2024 – Aug 2025 · Project Manager & Tech Lead</Label>
+            <Label>Aug 2024 to Aug 2025 · Project Manager & Tech Lead</Label>
             <h2 className="text-4xl lg:text-5xl font-bold tracking-tight leading-none mb-3">Lejit AI</h2>
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-400 mb-6">AI-Powered Legal Management Platform</p>
             <div className="flex flex-wrap gap-2">
@@ -781,12 +757,12 @@ function LejitSection() {
           </div>
           <div className="md:col-span-7 md:pt-1">
             <p className="text-lg md:text-xl text-stone-700 leading-relaxed border-l-2 border-pink-400 pl-5">
-              Came in as Project Manager and Tech Lead — which, in startup terms, meant architecting
+              Came in as Project Manager and Tech Lead, which in startup terms meant architecting
               the system, leading a 13-person team, shipping to production, and sitting across from lawyers
               at the High Court of Kerala, often in the same week.
             </p>
             <p className="mt-5 text-base text-stone-500 leading-relaxed pl-5">
-              Zero to 300+ users in the first month — an empty repo turned into something real lawyers
+              Zero to 300+ users in the first month. An empty repo turned into something real lawyers
               relied on every day.
             </p>
           </div>
@@ -802,13 +778,13 @@ function LejitSection() {
             badge="Winner · Dreamvestor 2025"
             src="/images/dreamvestor.jpg"
             alt="Team Lejit wins Dreamvestor 2025"
-            caption="Dreamvestor 2025 — Top 10 startups in Kerala, from 400+ contenders"
+            caption="Dreamvestor 2025: Top 10 startups in Kerala, from 400+ contenders"
           />
           <CollageTile
             className="col-span-2"
             src="/images/bar-talk.jpg"
             alt="AI in Legal Sector session at Trivandrum Bar Association"
-            caption="Speaking on AI in the Legal Sector — Trivandrum Bar Association, June 2025"
+            caption="Speaking on AI in the Legal Sector, Trivandrum Bar Association, June 2025"
           />
           <CollageTile
             className="col-span-1"
@@ -913,7 +889,7 @@ const PROJECTS: Project[] = [
     name: 'Fusion Drug-Target Affinity Prediction',
     badge: 'Deep Learning',
     tags: ['GNN', 'Cross-attention', 'Deep Learning'],
-    desc: 'Drug–target affinity prediction using multi-modal sequence–structure fusion with GNNs and cross-attention mechanisms.',
+    desc: 'Drug-target affinity prediction using multi-modal sequence-structure fusion with GNNs and cross-attention mechanisms.',
     links: [{ kind: 'code', url: 'https://github.com/Mariyaben/Fusion-Enhanced-Drug-Target-Affinity-Prediction' }],
   },
   {
@@ -941,7 +917,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    name: 'Vitae — Healthcare Platform',
+    name: 'Vitae: Healthcare Platform',
     badge: 'HealthTech',
     tags: ['TensorFlow', 'scikit-learn', 'HealthTech'],
     desc: 'Healthcare platform for personalized diagnosis and recommendations, built with TensorFlow and scikit-learn.',
@@ -1151,11 +1127,11 @@ function SkillChip({ name }: { name: string }) {
 // ══════════════════════════════════════════════════════════
 
 const ACHIEVEMENTS = [
-  { year: '2025–26', title: 'France Excellence Charpak Scholar', desc: 'Awarded by the French Government for academic and technical merit. Studied at ENSSAT, University of Rennes.' },
-  { year: '2025', title: 'Dreamvestor Winner — Top 10 Startups in Kerala', desc: 'Kerala Startup Mission. Selected from 400+ contenders. Rs. 1 Lakh cash prize for Lejit AI.' },
-  { year: '2024', title: 'IIT Delhi Fin-A-Thon — Top 15 nationally', desc: 'From 600+ teams. Hyperpersonalized Banking Engine project.' },
-  { year: '2024', title: 'HackAthena \'24 — Theme Prize Winner', desc: 'Road Safety theme prize, Rs. 10,000. LearnDrive.AI.' },
-  { year: '2024', title: 'Tink-Her-Hack 2.0 — Top 100', desc: 'From 1,000+ participants in Kerala.' },
+  { year: '2025/26', title: 'France Excellence Charpak Scholar', desc: 'Awarded by the French Government for academic and technical merit. Studied at ENSSAT, University of Rennes.' },
+  { year: '2025', title: 'Dreamvestor Winner: Top 10 Startups in Kerala', desc: 'Kerala Startup Mission. Selected from 400+ contenders. Rs. 1 Lakh cash prize for Lejit AI.' },
+  { year: '2024', title: 'IIT Delhi Fin-A-Thon: Top 15 nationally', desc: 'From 600+ teams. Hyperpersonalized Banking Engine project.' },
+  { year: '2024', title: 'HackAthena \'24: Theme Prize Winner', desc: 'Road Safety theme prize, Rs. 10,000. LearnDrive.AI.' },
+  { year: '2024', title: 'Tink-Her-Hack 2.0: Top 100', desc: 'From 1,000+ participants in Kerala.' },
 ]
 
 function AchievementsSection() {
