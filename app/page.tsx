@@ -447,7 +447,7 @@ const CHAPTERS = [
     id: 'firstwork',
     period: '2023 to 2024',
     tag: 'Early Career & Research',
-    title: 'Research Internships and a Streak of Wins',
+    title: 'Research Internships and Early Career',
     body: `An intense period balancing industry software engineering with deep learning research. Moved from an early industry role at KPIT to a collaborative internship with IBM, shipping LegalGPT on WatsonX and presenting it live at the IBM International GenAI Conclave. Concurrently, contributed to generative AI research at NIT Surathkal, building custom PyTorch diffusion restoration frameworks for hyperspectral anomaly detection, while keeping a consistent run at national hackathons.`,
     aside: [
       'Presented LegalGPT live on stage at the IBM International GenAI Conclave in Kochi.',
@@ -710,8 +710,8 @@ function StorySection() {
 const LEJIT_PHASES = [
   {
     num: '01',
-    title: 'Built from nothing',
-    desc: 'Joined at the founding stage with no codebase, no users, and everything still to define. Led the engineering direction and designed the core workflows and system architecture (Django backend, React/Next.js frontend, PostgreSQL with pgvector, AWS) that the team built on.',
+    title: 'Zero to one',
+    desc: 'Joined at the founding stage, with no codebase or users yet. Helped set the engineering direction and shape the core workflows and system architecture (Django backend, React/Next.js frontend, PostgreSQL with pgvector, AWS) that the team built on together.',
   },
   {
     num: '02',
@@ -757,7 +757,7 @@ function LejitSection() {
           </div>
           <div className="md:col-span-7 md:pt-1">
             <p className="text-lg md:text-xl text-stone-700 leading-relaxed border-l-2 border-pink-400 pl-5">
-              Came in as Project Manager and Tech Lead, which in startup terms meant architecting
+              Worked as Project Manager and Tech Lead, which in startup terms meant architecting
               the system, leading a 13-person team, shipping to production, and sitting across from lawyers
               at the High Court of Kerala, often in the same week.
             </p>
